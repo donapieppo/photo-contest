@@ -9,4 +9,7 @@ class User < ApplicationRecord
 
   validates :email, uniqueness: { case_sensitive: false }
 
+  def to_s
+    name + ' ' + surname
+  end
 end
