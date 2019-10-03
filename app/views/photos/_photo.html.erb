@@ -1,0 +1,13 @@
+<div class="card mt-2">
+  <div class="card-header">
+    <%= photo.description %>  
+    <span class="float-right"><%= link_to_delete photo_path(photo) %></span>
+  </div>
+
+  <div class="card-body">
+    <% if photo.image.attached? %>  
+      <%= image_tag photo.image %>  
+    <% end %>
+  </div>
+</div>
+

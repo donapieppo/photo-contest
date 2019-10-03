@@ -1,0 +1,6 @@
+<%= simple_form_for @photo do |f| %>  
+  <%= f.error_notification %>  
+  <%= f.input :description %>  
+  <%= f.input :image, as: :file, input_html: { accept: "image/*;capture=camera" } %>  
+  <%= f.submit %>  
+<% end %>

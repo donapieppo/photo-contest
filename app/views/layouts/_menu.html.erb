@@ -1,18 +1,11 @@
 <nav class="navbar navbar-light bg-white">
-  <%= link_to root_path, class: "navbar-brand" do %>
-    <%# <%= image_tag '#' %1> %> 
+  <%= link_to root_path, class: "navbar-brand text-info" do %>
+    <%= icon('fas fa-camera-retro', size: 64) %> &nbsp; pi-contest
   <% end %>
-  <ul class="nav">
-    <li class="nav-item">Ciao</li>
-  </ul>
-
   <% if current_user %>  
-    <div class="dropdown">
-      <div type="button" class="menu-button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        <i class="fas fa-bars fa-fw"></i>
-        <%= current_user %>  
-      </div>
-    </div>
+    <ul class="nav">
+      <li class="nav-item"><%= link_to current_user, edit_user_info_path %></li>
+    </ul>
   <% else %>
     <ul class="nav">
       <li class="nav-item"><%= link_to icon("fas fa-sign-in-alt fa-fw", 'accedi'), new_user_session_path, class: "btn-login" %>  </li>

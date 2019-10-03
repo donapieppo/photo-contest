@@ -1,2 +1,14 @@
 it:
   hello: Ciao
+  new_photo: Aggiungi una nuova foto
+
+  activerecord:
+    models:
+      photo: Foto
+    attributes:
+      photo:
+        description: Descrizione
+        image: Immagine
+      user:
+        name: Nome
+        surname: Cognome
