@@ -12,3 +12,9 @@ it:
       user:
         name: Nome
         surname: Cognome
+        school: Docente di scuola.
+
+  simple_form:
+    hints:
+      user:
+        school: Selezionare nel caso si proponessero lavori per una classe.

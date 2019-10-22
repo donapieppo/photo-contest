@@ -3,6 +3,7 @@ class PhotosController < ApplicationController
 
   def index
     @photos = current_user.photos.with_attached_image
+    authorize @photos
   end
 
   def new
@@ -14,9 +15,20 @@ class PhotosController < ApplicationController
     @photo = current_user.photos.new(photo_params)
     authorize @photo
     if @photo.save
-      redirect_to photos_path
+      redirect_to root_path
     else
       render action: :new
+    end
+  end
+
+  def edit
+  end
+
+  def update
+    if @photo.update_attributes(photo_params)
+      redirect_to root_path
+    else
+      render action: :edit
     end
   end
 

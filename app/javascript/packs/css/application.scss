@@ -1,10 +1,63 @@
 @import "~bootstrap/scss/bootstrap"; // never forget the semicolon at the end
+
 $fa-font-path: '~@fortawesome/fontawesome-free/webfonts'; 
 @import '~@fortawesome/fontawesome-free/scss/fontawesome';
 @import '~@fortawesome/fontawesome-free/scss/solid';
-@import '~@fortawesome/fontawesome-free/scss/regular';
+@import '~@fortawesome/fontawesome-free/scss/brands';
+
 @import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap');
 
 body {
   font-family: 'Roboto', sans-serif;
 }
+.btn-login {
+}
+.masthead {
+  min-height: 30rem;
+  position: relative;
+  display: table;
+  width: 100%;
+  height: auto;
+  padding-top: 8rem;
+  padding-bottom: 8rem;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  h1 {
+    font-size: 4rem;
+    margin: 0;
+    padding: 0;
+  }
+  @media (min-width: 992px) {
+    height: 100vh;
+    h1 {
+      font-size: 6.5rem;
+    }
+  }
+}
+
+
+footer.footer {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  .social-link {
+    display: block;
+    height: 4rem;
+    width: 4rem;
+    line-height: 4.3rem;
+    font-size: 1.5rem;
+    background-color: $primary;
+    transition: background-color 0.15s ease-in-out;
+    box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.1);
+    &:hover {
+      background-color: darken($primary, 10%);
+      text-decoration: none;
+    }
+  }
+} 
+
+.photo-description {
+  font-size: 120%;
+  font-weigh: 400;
+}
+

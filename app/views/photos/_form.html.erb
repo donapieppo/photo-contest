@@ -1,6 +1,9 @@
 <%= simple_form_for @photo do |f| %>  
   <%= f.error_notification %>  
   <%= f.input :description %>  
+  <% if @photo.image.attached? %>  
+    <%= image_tag @photo.image.variant(resize_to_limit: [300, 300]), class: "img-thumbnail" %>  
+  <% end %>
   <%= f.input :image, as: :file, input_html: { accept: "image/*;capture=camera" } %>  
-  <%= f.submit %>  
+  <%= f.submit 'Aggiorna la foto' %>  
 <% end %>

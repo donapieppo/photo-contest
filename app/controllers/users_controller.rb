@@ -7,7 +7,12 @@ class UsersController < ApplicationController
   def update_user_info
     @user = current_user
     authorize @user
-    @user.update_attributes(name: params[:user][:name], surname: params[:user][:surname])
+
+    @user.name = params[:user][:name]
+    @user.surname = params[:user][:surname]
+    @user.school = params[:user][:school]
+    @user.save
+
     redirect_to root_path
   end
 end

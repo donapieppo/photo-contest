@@ -16,13 +16,16 @@
   </head>
 
   <body>
-  <div class="container">
-    <%= render(partial: 'layouts/menu') unless @no_menu %>
-
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-
-    <%= yield %>
-  </div>
+    <div>
+      <% if current_user %>  
+        <%= render(partial: 'layouts/menu') unless @no_menu %>
+        <div class="container">
+          <% if notice %><div class="alert alert-primary alert-dismissible" role="alert"><%= notice %></div><% end %>
+          <% if alert %><div class="alert alert-danger alert-dismissible" role="alert"><%= alert %></div><% end %>
+        </div>
+      <% end %>
+      <%= yield %>
+      <%= render partial: 'layouts/footer' %>  
+    </div>
   </body>
 </html>

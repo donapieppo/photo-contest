@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="d-flex justify-content-center h-100">
+    <div class="card mt-5">
+      <div class="card-header"><h2>Accedi al π Photo Contest</h2></div>
+      <div class="card-body">
+
+        <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+          <div class="form-inputs">
+            <%= f.input :email,
+              required: false,
+              autofocus: true,
+              input_html: { autocomplete: "email" } %>
+            <%= f.input :password,
+              required: false,
+              input_html: { autocomplete: "current-password" } %>
+            <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+          </div>
+
+          <div class="form-actions">
+            <%= f.button :submit, "Accedi", class: 'btn btn-success' %>
+          </div>
+        <% end %>
+      </div>
+      <div class="card-footer">
+        <small><i>Non hai ancora un account?</i></small> <%= link_to "Voglio registrarmi", new_registration_path(resource_name) %>.<br/>
+        <%= link_to "Ho scordato la mia password", new_password_path(resource_name) %>.
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,7 +1,14 @@
 class PhotoPolicy < ApplicationPolicy
+  def index?
+    @user
+  end
 
   def create?
-    true
+    @user
+  end
+
+  def update?
+    @user.id == @record.user_id
   end
 
   def destroy?
