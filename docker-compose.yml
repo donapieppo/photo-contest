@@ -16,6 +16,6 @@ services:
       - db
     environment:
       - SECRET_KEY_BASE_SEMINARIA=2d32568r5e0e6b0f8adf3r01e09054b87fdaf8117eta673b901bd0ccdc24e12cf0ac3c948d7537befb929db833ef91b16ee90a494cd20cb6906541f9b6659761dkdkdk
-      - SEMINARIA_DATABASE_PASSWORD=verysecuresecret123
+      - PHOTO_CONTEST_DATABASE_PASSWORD=verysecuresecret123
 
 
