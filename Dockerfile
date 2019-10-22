@@ -18,6 +18,7 @@ RUN apt-get update \
 
 WORKDIR /usr/src/app
 COPY Gemfile* ./
+COPY package.json yarn.lock ./
 RUN bundle install
 COPY . .
 
