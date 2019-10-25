@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  skip_before_action :user_complete_data
+
   def edit_user_info
     @user = current_user
     authorize @user

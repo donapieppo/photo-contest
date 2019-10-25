@@ -12,4 +12,12 @@ class User < ApplicationRecord
   def to_s
     name + ' ' + surname
   end
+
+  def data_complete?
+    ! (name.blank? || surname.blank? || email.blank? || birthdate.blank? || birthplace.blank? || cf.blank?)
+  end
+
+  def manager?
+    ['donapieppo@yahoo.it'].include?(email)
+  end
 end
