@@ -12,6 +12,8 @@ gem 'mini_magick'
 gem 'pretender'
 gem 'pundit'
 
+gem "prawn"
+
 gem 'simple_form', '~> 5'
 #gem 'bootstrap', '~> 4'
 #gem 'font-awesome-sass'
