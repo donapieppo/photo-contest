@@ -41,10 +41,20 @@ ActiveRecord::Schema.define(version: 2019_10_02_125639) do
     t.index ["user_id"], name: "fk_user_photo"
   end
 
+  create_table "themes", id: :integer, unsigned: true, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+    t.string "title"
+    t.string "subtitle"
+    t.text "description"
+  end
+
   create_table "users", id: :integer, unsigned: true, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
     t.string "surname"
     t.string "email", default: "", null: false
+    t.date "birthdate"
+    t.string "birthplace"
+    t.string "address"
+    t.string "cf"
     t.boolean "school"
     t.string "school_name"
     t.string "school_address"
