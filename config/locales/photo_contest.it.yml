@@ -12,9 +12,14 @@ it:
       user:
         name: Nome
         surname: Cognome
-        school: Docente di scuola.
+        birthdate: Data di nascita
+        birthplace: Luogo di nascita
+        address: Residenza
+        cf: Codice fiscale
+        school: Docente di scuola
 
   simple_form:
     hints:
       user:
         school: Selezionare nel caso si proponessero lavori per una classe.
+        birthdate: Per partecipare è necessario essere maggiorenni.
