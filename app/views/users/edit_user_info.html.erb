@@ -6,8 +6,13 @@
         <%= simple_form_for @user, url: :update_user_info, method: :post do |f| %>  
           <%= f.input :name %>  
           <%= f.input :surname %>  
+          <%= f.input :birthdate, start_year: 1930, end_year: 2000 %>  
+          <%= f.input :birthdate, as: :string, input_html: {type: :date, max: (Date.today - 19.years)} %>
+          <%= f.input :birthplace %>  
+          <%= f.input :address %>  
+          <%= f.input :cf %>  
           <%= f.input :school %>  
-          <%= f.submit 'Salva' %>  
+          <%= f.submit 'Salva' %>  - mostra <%= link_to 'liberatoria', printable_release_path %>  
         <% end %>
       </div>
     </div>
