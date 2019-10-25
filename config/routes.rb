@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
 
+  resources :themes
   resources :photos
 
   get  'edit_user_info', to: 'users#edit_user_info', as: :edit_user_info
