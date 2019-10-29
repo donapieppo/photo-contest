@@ -45,6 +45,8 @@ ActiveRecord::Schema.define(version: 2019_10_02_125639) do
     t.string "title"
     t.string "subtitle"
     t.text "description"
+    t.boolean "video"
+    t.boolean "school"
   end
 
   create_table "users", id: :integer, unsigned: true, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|

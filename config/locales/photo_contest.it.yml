@@ -5,10 +5,12 @@ it:
   activerecord:
     models:
       photo: Foto
+      theme: categoria
     attributes:
       photo:
         description: Descrizione
         image: Immagine
+        theme: Categoria
       user:
         name: Nome
         surname: Cognome
@@ -17,6 +19,12 @@ it:
         address: Residenza
         cf: Codice fiscale
         school: Docente di scuola
+      theme:
+        title: Titolo
+        submit: Sottotitolo
+        description: Descrizione
+        video: video
+        school: Aperta alle scuole
 
   simple_form:
     hints:

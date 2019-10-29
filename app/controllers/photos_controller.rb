@@ -2,11 +2,15 @@ class PhotosController < ApplicationController
   before_action :get_photo_and_check_permission, only: [:show, :edit, :update, :destroy]
 
   def index
-    @photos = current_user.photos.with_attached_image
+    @photos = current_user.photos.with_attached_image.includes(:theme)
     authorize @photos
   end
 
+  def show
+  end
+
   def new
+    @theme = Theme.find(params[:theme_id]) if params[:theme_id]
     @photo = current_user.photos.new
     authorize @photo
   end
@@ -22,6 +26,7 @@ class PhotosController < ApplicationController
   end
 
   def edit
+    @theme = @photo.theme
   end
 
   def update

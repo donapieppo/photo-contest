@@ -1,0 +1,20 @@
+<div class="container">
+  <h1>Lista Categorie</h1>
+
+  <% @themes.each do |theme| %>  
+    <div class="card my-1">
+      <div class="card-header">
+        <%= theme.title %>
+        <span class="float-right"><%= link_to_edit [:edit, theme] %></span>
+      </div>
+      <div class="card-body">
+        <h5><%= theme.subtitle %></h5>
+        <%= theme.description %>  
+      </div>
+    </div>
+  <% end %>
+
+  <div class="my-3">
+    <%= link_to 'Nuova categoria', new_theme_path, class: 'btn btn-primary' %>  
+  </div>
+</div>

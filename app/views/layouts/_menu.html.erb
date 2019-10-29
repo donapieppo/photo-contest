@@ -1,16 +1,19 @@
-<nav class="navbar navbar-light bg-white">
+<nav class="navbar navbar-dark bg-dark navbar-expand-lg">  
   <%= link_to root_path, class: "navbar-brand text-info" do %>
-    <%= icon('fas fa-camera-retro', size: 64) %> π Photo Contest
+    <%= icon('fas fa-camera-retro', size: 64) %> π Contest
   <% end %>
+  <div class="collapse navbar-collapse" id="navbarNav">
+  <ul class="navbar-nav ml-auto">
   <% if current_user %>  
-    <ul class="nav">
-      <li class="nav-item mx-2"><%= link_to current_user.email, edit_user_info_path %></li>
-      <li class="nav-item"><%= link_to icon("fas fa-sign-out-alt fa-fw"), destroy_user_session_path, method: :delete, class: "btn-login" %>  </li>
-    </ul>
+      <% if current_user.manager? %>  
+        <li class="nav-item"><%= link_to 'categorie', themes_path, class: 'nav-link' %></li>
+      <% end %>
+      <li class="nav-item mx-2"><%= link_to current_user.email, edit_user_info_path, class: 'nav-link' %></li>
+      <li class="nav-item"><%= link_to icon("fas fa-sign-out-alt fa-fw"), destroy_user_session_path, method: :delete, class: "nav-link" %></li>
   <% else %>
-    <ul class="nav">
-      <li class="nav-item"><%= link_to icon("fas fa-sign-in-alt fa-fw", 'accedi'), new_user_session_path, class: "btn-login" %>  </li>
-    </ul>
+      <li class="nav-item"><%= link_to icon("fas fa-sign-in-alt fa-fw", 'accedi'), new_user_session_path, class: "nav-link" %></li>
   <% end %>
+  </ul>
+  </div>
 </nav>
 

@@ -1,5 +1,16 @@
 <div class="container">
   <h1>Nuova foto</h1>
 
-  <%= render partial: 'form' %>  
+  <% if @theme %>  
+    <%= render partial: 'form' %>  
+  <% else %>  
+    <% Theme.find_each do |theme| %>   
+      <%= link_to new_theme_photo_path(theme) do %>  
+        <div class="card">
+          <div class="card-header"><%= theme.title %> </div>
+          <div class="card-body"><%= theme.subtitle %></div>
+        </div>
+      <% end %>
+    <% end %>
+  <% end %>
 </div>

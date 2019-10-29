@@ -16,9 +16,10 @@ RUN apt-get update \
     && apt-get install nodejs yarn \
     && rm -rf /var/lib/apt/lists/*
 
+RUN gem install bundler
+
 WORKDIR /usr/src/app
 COPY Gemfile* ./
-COPY package.json yarn.lock ./
 RUN bundle install
 COPY . .
 

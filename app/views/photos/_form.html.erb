@@ -1,4 +1,6 @@
-<%= simple_form_for @photo do |f| %>  
+<h2>Categoria: <%= @theme %></h2>
+<h3><%= @theme.subtitle %></h3>
+<%= simple_form_for [@theme, @photo] do |f| %>  
   <%= f.error_notification %>  
   <%= f.input :description %>  
   <% if @photo.image.attached? %>  
