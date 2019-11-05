@@ -1,0 +1,11 @@
+<div class="row">
+  <% Theme.find_each do |theme| %>   
+    <div class="col-md-4 col-sm-2">
+      <%= link_to new_theme_photo_path(theme), class: 'photo-theme-link' do %>  
+        <%= render theme %>  
+      <% end %>
+    </div>
+  <% end %>
+</div>
+
+

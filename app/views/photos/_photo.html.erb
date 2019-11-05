@@ -1,21 +1,29 @@
-<div class="card my-2" style="width: 80vh; margin: auto">
-  <% if photo.image.attached? %>  
-    <%= image_tag photo.image, class: "card-img-top" %>  
-  <% end %>
-  <div class="card-body">
-    <h4>Nella categoria ``<%= photo.theme %>''</h4>
-    <div class="card-text photo-description">
-      <%= photo.description %>
+<div class="row my-3">
+  <div class="col-md-6 m-0 px-1">
+    <% if photo.image.attached? %>
+      <%= image_tag photo.image.variant(resize_to_limit: [800, 800]), class: "img-fluid m-0" %>  
+    <% end %>
+  </div>
+  <div class="col-md-6 m-0 px-1">
+    <div class="card h-100">
+      <div class="card-header bg-info text-white text-center" style="width: 100; border: 1px solid #ccc; position: absolute; right: -10px; top: -10px; width: 50%; box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);">
+        <div>Nella categoria</div>
+        <h4 class="photo-title"><%= photo.theme %></h4>
+      </div>
+      <div class="class-body h-100 p-1" style="margin-top: 6rem">
+        <div class="photo-description">
+          <%= photo.description %>
+        </div>
+      </div>
+      <div class="card-footer">
+        <small class="float-left text-muted"> foto inviata il <%= l(photo.created_at, format: :day) %></small>
+        <% if policy(photo).edit? %>  
+          <span class="float-right mx-1"><%= link_to icon('fas fa-edit'), [:edit, photo] %></span>
+        <% end %>
+        <% if policy(photo).destroy?  %>  
+          <span class="float-right mx-1"><%= link_to_delete photo_path(photo) %></span>
+        <% end %>
+      </div>
     </div>
   </div>
-  <div class="card-footer">
-    <small class="float-left"> foto inviata il <%= l(photo.created_at, format: :short) %></small>
-    <% if policy(photo).edit? %>  
-      <span class="float-right mx-1"><%= link_to icon('fas fa-edit'), [:edit, photo] %></span>
-    <% end %>
-    <% if policy(photo).destroy?  %>  
-      <span class="float-right mx-1"><%= link_to_delete photo_path(photo) %></span>
-    <% end %>
-  </div>
 </div>
-

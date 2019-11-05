@@ -1,11 +1,26 @@
-<h2>Categoria: <%= @theme %></h2>
-<h3><%= @theme.subtitle %></h3>
+<div class="row text-info my-4">
+  <div class='col-2 btn btn-lg btn-info'>
+    <div class="p-2" style="font-size: 200%"><%= theme_icon(@theme) %></div>
+  </div>
+  <div class='col w-100 text-info'>
+    <h2><%= @theme %></h2>
+    <h6><%= @theme.subtitle %></h6>
+  </div>
+</div>
+
 <%= simple_form_for [@theme, @photo] do |f| %>  
   <%= f.error_notification %>  
-  <%= f.input :description %>  
-  <% if @photo.image.attached? %>  
-    <%= image_tag @photo.image.variant(resize_to_limit: [300, 300]), class: "img-thumbnail" %>  
-  <% end %>
-  <%= f.input :image, as: :file, input_html: { accept: "image/*;capture=camera" } %>  
-  <%= f.submit 'Aggiorna la foto' %>  
+  <div class="row">
+    <div class="col-md-4">
+      <% if @photo.image.attached? %>  
+        <%= image_tag @photo.image.variant(resize_to_limit: [300, 300]), class: "img-thumbnail" %>  
+      <% else %>
+        <%= f.input :image, as: :file, input_html: { accept: "image/*;capture=camera" } %>  
+      <% end %>
+    </div>
+    <div class="col-md-8">
+      <%= f.input :description, input_html: { rows: 8 } %>  
+      <%= f.submit 'Invia' %>  
+    </div>
+  </div>
 <% end %>

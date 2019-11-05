@@ -2,7 +2,12 @@ class PhotosController < ApplicationController
   before_action :get_photo_and_check_permission, only: [:show, :edit, :update, :destroy]
 
   def index
-    @photos = current_user.photos.with_attached_image.includes(:theme)
+    if current_user.jury?
+      @theme = Theme.find(params[:theme_id])
+      @photos = @theme.photos
+    else
+      @photos = current_user.photos.with_attached_image.includes(:theme).order(:theme_id)
+    end
     authorize @photos
   end
 
@@ -16,7 +21,9 @@ class PhotosController < ApplicationController
   end
 
   def create
+    @theme = Theme.find(params[:theme_id])
     @photo = current_user.photos.new(photo_params)
+    @photo.theme = @theme
     authorize @photo
     if @photo.save
       redirect_to root_path
