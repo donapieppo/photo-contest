@@ -10,9 +10,18 @@ class UsersController < ApplicationController
     @user = current_user
     authorize @user
 
-    @user.update(user_params)
+    if @user.update(user_params)
+      redirect_to root_path
+    else
+      render action: :edit_user_info
+    end
+  end
 
-    redirect_to root_path
+  def delete_id_card
+    @user = current_user
+    authorize @user
+    @user.id_card.delete
+    redirect_to edit_user_info_path
   end
 
   def release
@@ -24,7 +33,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params[:user].permit(:name, :surname, :birthdate, :birthplace, :cf, :address, :school)
+    params[:user].permit(:name, :surname, :birthdate, :birthplace, :address, :cf, :school, :id_card)
   end
 
 end

@@ -1,18 +1,26 @@
 <div class="container">
   <div class="d-flex justify-content-center h-100">
     <div class="card mt-5">
-      <div class="card-header"><h2>I tuoi dati</h2></div>
+      <div class="card-header bg-warning"><h2><%= icon('fas fa-user', size: 36) %> I tuoi dati</h2></div>
       <div class="card-body">
         <%= simple_form_for @user, url: :update_user_info, method: :post do |f| %>  
           <%= f.input :name %>  
           <%= f.input :surname %>  
-          <%= f.input :birthdate, start_year: 1930, end_year: 2000 %>  
           <%= f.input :birthdate, as: :string, input_html: {type: :date, max: (Date.today - 19.years)} %>
           <%= f.input :birthplace %>  
           <%= f.input :address %>  
           <%= f.input :cf %>  
+          <% unless @user.id_card.attached? %>
+            <%= f.input :id_card, as: :file %>  
+          <% end %>
           <%= f.input :school %>  
           <%= f.submit 'Salva' %>  - mostra <%= link_to 'liberatoria', printable_release_path %>  
+        <% end %>
+        <% if @user.id_card.attached? %>
+          <div class="m-2">
+            <%= link_to icon('fas fa-file', 'Mostra documento di identità'), @user.id_card, target: :new %>  <br/>
+            <%= link_to icon('fas fa-trash-alt', 'Elimina il documento di identità'), delete_id_card_path, method: :post %>  
+          </div>
         <% end %>
       </div>
     </div>
