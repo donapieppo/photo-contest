@@ -8,4 +8,8 @@ class UserPolicy < ApplicationPolicy
     @user.id == @record.id
   end
 
+  def delete_id_card?
+    @user.id == @record.id
+  end
+
 end
