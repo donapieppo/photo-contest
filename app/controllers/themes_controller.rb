@@ -1,5 +1,6 @@
 class ThemesController < ApplicationController
   before_action :get_theme_and_check_permission, only: [:edit, :update]
+
   def index
     @themes = Theme.all
     authorize :theme
@@ -24,7 +25,7 @@ class ThemesController < ApplicationController
   end
 
   def update
-    if @theme.upadte(theme_params)
+    if @theme.update(theme_params)
       redirect_to themes_path
     else
       render action: :edit
