@@ -1,11 +1,11 @@
 <nav class="navbar navbar-dark bg-dark navbar-expand-lg">  
   <%= link_to root_path, class: "navbar-brand text-info" do %>
-    <%= icon('fas fa-camera-retro', size: 64) %> π Contest
+    <%= icon('fas fa-camera-retro', size: 48) %> π Contest
   <% end %>
   <div class="collapse navbar-collapse" id="navbarNav">
   <ul class="navbar-nav ml-auto">
   <% if current_user %>  
-      <% if current_user.manager? %>  
+      <% if policy(:theme).index? %>  
         <li class="nav-item"><%= link_to 'categorie', themes_path, class: 'nav-link' %></li>
       <% end %>
       <li class="nav-item mx-2"><%= link_to current_user.email, edit_user_info_path, class: 'nav-link' %></li>

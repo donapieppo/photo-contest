@@ -1,7 +1,7 @@
 <% if current_user %>  
-  <div class="container text-center">
+  <div class="container text-center mb-5">
     <% if @photos.any? %>  
-      <h4>Gentile <%= current_user %>, hai sottoposto le segueti foto:</h4>
+      <h4 class="my-5">Gentile <%= current_user %>, hai sottoposto le seguenti foto:</h4>
       <%= render @photos, preview: true %>  
     <% else %>
       <div class="alert alert-warning">
@@ -9,7 +9,7 @@
       </div>
     <% end %>
     <% if policy(:photo).new?  %>  
-      <div class="text-center m-3">
+      <div class="text-center m-5">
         <%= link_to icon('fas fa-plus-circle', t(:new_photo)), new_photo_path, class: 'btn btn-primary btn-lg' %>  
       </div>
     <% end %>
