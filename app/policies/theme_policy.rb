@@ -1,6 +1,6 @@
 class ThemePolicy < ApplicationPolicy
   def index?
-    true
+    @user.manager? || @user.jury?
   end
 
   def create?
