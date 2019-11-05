@@ -1,10 +1,10 @@
 class PhotoPolicy < ApplicationPolicy
   def index?
-    @user
+    @user 
   end
 
   def create?
-    @user
+    @user && (! user.jury?)
   end
 
   def update?
