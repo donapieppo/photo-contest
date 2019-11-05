@@ -10,7 +10,15 @@
     <% end %>
     <% if policy(:photo).new?  %>  
       <div class="text-center m-5">
-        <%= link_to icon('fas fa-plus-circle', t(:new_photo)), new_photo_path, class: 'btn btn-primary btn-lg' %>  
+        <%= link_to icon('fas fa-plus-circle', t(:new_photo)), new_photo_path, class: 'btn btn-primary btn-lg p-3', style: 'width: 400px' %>  
+      </div>
+    <% end %>
+    <% if @videos.any? %>
+      <%= render @videos %>
+    <% end %>
+    <% if policy(:video).new?  %>  
+      <div class="text-center m-5">
+        <%= link_to icon('fas fa-plus-circle', t(:new_video)), new_video_path, class: 'btn btn-primary btn-lg p-3', style: 'width: 400px'  %>  
       </div>
     <% end %>
   </div>

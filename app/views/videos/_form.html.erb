@@ -1,0 +1,20 @@
+<div class="row text-info my-4">
+  <div class='col-2 btn btn-lg btn-info'>
+    <div class="p-2" style="font-size: 200%"><%= theme_icon(@theme) %></div>
+  </div>
+  <div class='col w-100 text-info'>
+    <h2><%= @theme %></h2>
+    <h6><%= @theme.subtitle %></h6>
+  </div>
+</div>
+
+<%= simple_form_for [@theme, @video] do |f| %>  
+  <%= f.error_notification %>  
+  <% if @video.video_url? %>  
+    <p>VIDOEO</p>
+  <% else %>
+    <%= f.input :video_url %>  
+  <% end %>
+  <%= f.input :description, input_html: { rows: 8 } %>  
+  <%= f.submit 'Invia' %>  
+<% end %>

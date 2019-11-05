@@ -1,6 +1,7 @@
 it:
   hello: Ciao
   new_photo: Aggiungi una nuova foto
+  new_video: Aggiungi un nuovo video
 
   activerecord:
     models:

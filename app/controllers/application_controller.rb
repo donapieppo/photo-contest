@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   include Pundit
+  impersonates :user
 
   I18n.locale = :it
 

@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(version: 2019_10_02_125639) do
 
   create_table "photos", id: :integer, unsigned: true, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.integer "user_id", null: false, unsigned: true
+    t.integer "theme_id", unsigned: true
     t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -73,6 +74,17 @@ ActiveRecord::Schema.define(version: 2019_10_02_125639) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  create_table "videos", id: :integer, unsigned: true, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+    t.integer "user_id", null: false, unsigned: true
+    t.integer "theme_id", unsigned: true
+    t.string "video_url", limit: 200
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "fk_user_video"
+  end
+
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "photos", "users", name: "fk_user_photo"
+  add_foreign_key "videos", "users", name: "fk_user_video"
 end

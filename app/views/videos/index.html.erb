@@ -1,0 +1,20 @@
+<div class="container text-center">
+  <% if current_user.jury? %>  
+    <%= render @videos %>
+  <% else %>
+    <% if @videos.any? %>  
+      <h2>Le foto che hai inviato</h2>
+      <%= render @videos %>  
+    <% else %>
+      <div class="alert alert-worning">
+        Non hai ancora inviato nessuna foto.
+      </div>
+    <% end %>
+    <% if policy(:video).new?  %>  
+      <div class="text-center m-3">
+        <%= link_to icon('fas fa-plus-circle', t(:new_video)), new_video_path, class: 'btn btn-primary btn-lg' %>  
+      </div>
+    <% end %>
+  <% end %>
+</div>
+

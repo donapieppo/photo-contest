@@ -6,6 +6,7 @@ class User < ApplicationRecord
          :trackable
 
   has_many :photos
+  has_many :videos
 
   validates :email, uniqueness: { case_sensitive: false }
   validate :adult
