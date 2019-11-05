@@ -1,15 +1,34 @@
-@import "~bootstrap/scss/bootstrap"; // never forget the semicolon at the end
+@import '~bootstrap/scss/bootstrap'; // never forget the semicolon at the end
 
 $fa-font-path: '~@fortawesome/fontawesome-free/webfonts'; 
 @import '~@fortawesome/fontawesome-free/scss/fontawesome';
 @import '~@fortawesome/fontawesome-free/scss/solid';
 @import '~@fortawesome/fontawesome-free/scss/brands';
 
-@import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap');
+// @import url('https://fonts.googleapis.com/css?family=Roboto:100,400,700&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Raleway:400,400i,700&display=swap");
 
-body {
-  font-family: 'Roboto', sans-serif;
+html {
+  scroll-behavior: smooth;
 }
+body {
+  // font-family: 'Roboto', sans-serif;
+  font-family: 'Raleway', sans-serif;
+}
+
+h1 {
+  font-size: 36px;
+  letter-spacing: -1px;
+  line-height: 80px;
+  font-weight: 100;
+  text-transform: uppercase;
+  margin: auto;
+  text-align: center;
+}
+h1.header-title {
+  font-weight: 400;
+}
+
 .btn-login {
 }
 .masthead {
@@ -57,6 +76,26 @@ footer.footer {
 } 
 
 .photo-description {
-  font-weigh: 400;
+  @extend .m-1;
+  text-align: left;
 }
 
+.upcase {
+  text-transform: uppercase;
+}
+
+h4.photo-title {
+  font-size: 24px;
+  letter-spacing: -1px;
+  font-weight: 100;
+}
+
+.photo-theme-link { 
+  @extend .m-2;
+  @extend .p-2;
+  @extend .btn;
+  @extend .btn-info;
+  text-align: center;
+  width: 100%;
+  height: 250px;
+}
