@@ -3,7 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 gem 'rails', '~> 6.0.0'
 gem 'mysql2', '>= 0.4.4'
-gem 'sass-rails', '~> 5'
+gem 'sassc-rails'
 gem 'webpacker', '~> 4.0'
 
 gem 'jbuilder', '~> 2.7'
