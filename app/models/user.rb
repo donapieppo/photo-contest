@@ -17,15 +17,16 @@ class User < ApplicationRecord
   end
 
   def data_complete?
+    self.jury? and return true
     ! (name.blank? || surname.blank? || email.blank? || birthdate.blank? || birthplace.blank? || cf.blank? || id_card.blank?)
   end
 
   def manager?
-    ['donapieppo@yahoo.it'].include?(email)
+    ADMINS.include?(email)
   end
 
   def jury?
-    ['donapieppo@yahoo.it'].include?(email)
+    JURY.include?(email)
   end
 
   private 
