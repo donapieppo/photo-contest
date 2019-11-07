@@ -17,6 +17,7 @@
 
   <body>
     <div>
+      <%= bootstrap_modal_div %>  
       <% if current_user %>  
         <%= render(partial: 'layouts/menu') unless @no_menu %>
         <div class="container">
