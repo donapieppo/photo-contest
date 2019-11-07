@@ -1,5 +1,5 @@
 <div class="row text-info my-4">
-  <div class='col-2 btn btn-lg btn-info'>
+  <div class='col-3 col-md-2 btn btn-lg btn-info'>
     <div class="p-2" style="font-size: 200%"><%= theme_icon(@theme) %></div>
   </div>
   <div class='col w-100 text-info'>
@@ -11,7 +11,9 @@
 <%= simple_form_for [@theme, @video] do |f| %>  
   <%= f.error_notification %>  
   <% if @video.video_url? %>  
-    <p>VIDOEO</p>
+    <div class="embed-responsive embed-responsive-16by9">
+      <iframe class="embed-responsive-item" src="<%= video.embed_url %>" frameborder="0"></iframe>
+    </div>
   <% else %>
     <%= f.input :video_url %>  
   <% end %>
