@@ -9,13 +9,13 @@
         <div>
           <h4>le categorie</h4>
           <dl>
-            <dt>1. #insideoutdm</dt>
+            <dt>1. <%= modal_link_to '#insideoutdm', theme_path(1) %></dt>
             <dd>dentro e fuori l'edificio</dd>
-            <dt>2. #mathisallaround</dt>
+            <dt>2. <%= modal_link_to '#mathisallaround', theme_path(2) %></dt>
             <dd>la matematica c'&egrave; e si vede</dd>
-            <dt>3. #everybodylovespi</dt>
+            <dt>3. <%= modal_link_to '#everybodylovespi', theme_path(3) %></dt>
             <dd>&pi; aka Pi greco</dd>
-            <dt>4. #cgiandmath</dt>
+            <dt>4. <%= modal_link_to '#cgiandmath', theme_path(4) %></dt>
             <dd>matematica &amp; grafica digitale</dd>
           </dl>
         </div>
@@ -25,7 +25,7 @@
           <p>I singoli partecipanti (maggiorenni) possono inviare fino a due foto per categoria.</p>
           <p>Possono partecipare anche classi di scuola secondaria (rappresentate da un insegnante) nelle categorie 2, 3 e 4.</p>
 
-          scarica il bando - accedi (?)
+          <div class="btn btn-info">scarica il bando</div>
         </div>
         </div>
         <div class="col-md-6" style="background-color: #9cba7e; border: 1px solid #000; padding: 50px; color: #000">
