@@ -99,3 +99,19 @@ h4.photo-title {
   width: 100%;
   height: 250px;
 }
+.sponsors-list {
+  @extend .row;
+  @extend .py-3;
+  @extend .my-5;
+  .sponsor-title {
+    @extend .col-md-2;
+    @extend .col-sm-4;
+  }
+  .sponsor-logo {
+    @extend .col-md-2;
+    @extend .col-sm-4;
+    img {
+      width: 150px;
+    }
+  }
+}
