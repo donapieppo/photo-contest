@@ -123,4 +123,5 @@ h4.photo-title {
   @extend .p-4;
   width: 90%;
   @include media-breakpoint-up(md) { width: 60% };
+
 }
