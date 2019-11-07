@@ -13,4 +13,8 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  # copy in app/controllers/application_controller.rb
+  def modal_page
+    params[:modal] && params[:modal] == 'yyy'
+  end
 end
