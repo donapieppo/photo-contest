@@ -115,3 +115,12 @@ h4.photo-title {
     }
   }
 }
+
+.new-button {
+  @extend .btn;
+  @extend .btn-primary;
+  @extend .btn-lg;
+  @extend .p-4;
+  width: 90%;
+  @include media-breakpoint-up(md) { width: 60% };
+}

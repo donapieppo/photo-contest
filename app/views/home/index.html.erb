@@ -1,7 +1,8 @@
 <% if current_user && ! current_user.jury? %>  
   <div class="container text-center mb-5">
+    <h4 class="my-5">Concorso #matimmagini</h4>
     <% if @photos.any? %>  
-      <h4 class="my-5">Gentile <%= current_user %>, hai sottoposto le seguenti foto:</h4>
+      <h5 class="my-5">Gentile <%= current_user %>, hai sottoposto le seguenti foto:</h5>
       <%= render @photos, preview: true %>  
     <% else %>
       <div class="alert alert-warning">
@@ -10,15 +11,21 @@
     <% end %>
     <% if policy(:photo).new?  %>  
       <div class="text-center m-5">
-        <%= link_to icon('fas fa-plus-circle', t(:new_photo)), new_photo_path, class: 'btn btn-primary btn-lg p-3', style: 'width: 400px' %>  
+        <%= link_to icon('fas fa-plus-circle', t(:new_photo), size: 42), new_photo_path, class: 'new-button' %>  
       </div>
     <% end %>
+    <hr/>
+    <h4 class="my-5">Concorso MATtalks</h4>
     <% if @videos.any? %>
       <%= render @videos %>
+    <% else %>
+      <div class="alert alert-warning">
+        Non hai ancora inviato nessun video.
+      </div>
     <% end %>
     <% if policy(:video).new?  %>  
       <div class="text-center m-5">
-        <%= link_to icon('fas fa-plus-circle', t(:new_video)), new_video_path, class: 'btn btn-primary btn-lg p-3', style: 'width: 400px'  %>  
+        <%= link_to icon('fas fa-plus-circle', t(:new_video), size: 42), new_video_path, class: 'new-button' %>  
       </div>
     <% end %>
   </div>
