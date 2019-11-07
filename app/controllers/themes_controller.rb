@@ -1,4 +1,5 @@
 class ThemesController < ApplicationController
+  skip_before_action :authenticate_user!, only: :show
   before_action :get_theme_and_check_permission, only: [:show, :edit, :update]
 
   def index
