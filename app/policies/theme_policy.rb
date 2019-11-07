@@ -3,6 +3,10 @@ class ThemePolicy < ApplicationPolicy
     @user.manager? || @user.jury?
   end
 
+  def show?
+    true
+  end
+
   def create?
     @user.manager?
   end

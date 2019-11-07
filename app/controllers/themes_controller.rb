@@ -1,9 +1,13 @@
 class ThemesController < ApplicationController
-  before_action :get_theme_and_check_permission, only: [:edit, :update]
+  before_action :get_theme_and_check_permission, only: [:show, :edit, :update]
 
   def index
     @themes = Theme.all
     authorize :theme
+  end
+
+  def show
+    render layout: false if modal_page
   end
 
   def new
