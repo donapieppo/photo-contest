@@ -14,6 +14,7 @@ class User < ApplicationRecord
   has_one_attached :id_card
 
   attr_accessor :id_card_missing_error
+  attr_accessor :privacy_policy
 
   def to_s
     name + ' ' + surname
