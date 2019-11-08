@@ -8,4 +8,7 @@ class HomeController < ApplicationController
       @videos = current_user.videos
     end
   end
+
+  def privacy
+  end
 end
