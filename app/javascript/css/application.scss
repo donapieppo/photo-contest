@@ -104,12 +104,16 @@ h4.photo-title {
   @extend .py-3;
   @extend .my-5;
   .sponsor-title {
-    @extend .col-md-2;
     @extend .col-sm-4;
+    @extend .col-md-3;
   }
-  .sponsor-logo {
-    @extend .col-md-2;
-    @extend .col-sm-4;
+  .sponsors-logo {
+    @extend .col-sm-8;
+    @extend .col-md-9;
+    div {
+      display: inline;
+      margin-left: 50px;
+    }
     img {
       width: 150px;
     }
@@ -122,6 +126,36 @@ h4.photo-title {
   @extend .btn-lg;
   @extend .p-4;
   width: 90%;
-  @include media-breakpoint-up(md) { width: 60% };
-
+  @include media-breakpoint-up(md) { width: 40% };
 }
+
+.modal-content {
+  background-color: $info;
+  color: white;
+}
+
+.matimmagini-bg-colored {
+  background-color: #ff9e2c; 
+}
+
+.mattalks-bg-colored {
+  background-color: #9cba7e;
+}
+
+.contest-description-container {
+  @extend .row;
+  .contest-description-item {
+    @extend .col-md-6;
+    border: 1px solid #000; 
+    padding: 50px; 
+    color: #000;
+  }
+  .raccontiamate {
+    @extend .col-12;
+    @extend .p-5;
+    background-color: #f0f0b3; 
+    border: 1px solid #000;
+  }
+}
+
+
