@@ -8,8 +8,8 @@ class ApplicationController < ActionController::Base
   before_action :authenticate_user!, :user_complete_data
 
   def user_complete_data
-    if current_user
-      current_user.data_complete? or redirect_to(edit_user_info_path, alert: "Si prega di completare l'inserimento dei propri dati.")
+    if current_user && ! current_user.data_complete? 
+      redirect_to(edit_user_info_path, alert: "Vi preghiamo di completare l'inserimento dei vostri dati. #{current_user.id_card_missing_error}")
     end
   end
 
