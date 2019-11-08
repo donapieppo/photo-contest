@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  devise_for :users
+  # thanx to https://github.com/plataformatec/devise/wiki/How-To:-Use-Recaptcha-with-Devise
+  devise_for :users, controllers: { registrations: 'registrations' }
 
   resources :themes do
     resources :photos
@@ -16,6 +17,8 @@ Rails.application.routes.draw do
   get 'who_impersonate',    to: 'impersonations#who_impersonate',    as: :who_impersonate
   get 'impersonate/:id',    to: 'impersonations#impersonate',        as: :impersonate
   get 'stop_impersonating', to: 'impersonations#stop_impersonating', as: :stop_impersonating
+
+  get 'privacy',       to: 'home#privacy',       as: :privacy
 
   root to: "home#index"
 end

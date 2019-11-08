@@ -18,9 +18,19 @@
             <%= f.input :password_confirmation,
               required: true,
               input_html: { autocomplete: "new-password" } %>
+            <%= f.input :privacy_policy, 
+              as: :boolean, 
+              checked_value: true, 
+              unchecked_value: false, 
+              required: true, 
+              hint: "Accetto le condizioni di #{link_to 'trattamento dei dati personali', privacy_path}".html_safe %>
+            <% if flash[:recaptcha_error] %>
+              <div class="alert alert-danger"><%= flash[:recaptcha_error] %></div>
+            <% end %>
+            <%= recaptcha_tags %>
           </div>
 
-          <div class="form-actions">
+          <div class="form-actions my-2">
             <%= f.button :submit, "Crea account", class: 'btn btn-primary' %> -
             <%= link_to 'indietro', root_path %>  
           </div>

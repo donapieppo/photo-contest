@@ -17,6 +17,7 @@ gem "prawn"
 
 gem 'simple_form', '~> 5'
 gem 'devise'
+gem "recaptcha"
 # gem "recaptcha", require: "recaptcha/rails"
 
 group :development, :test do
