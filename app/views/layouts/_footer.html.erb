@@ -13,7 +13,12 @@
         </a>
       </li>
     </ul>
-    <p class="text-muted small mb-0">Copyright &copy; Dipartimento di Matematica - Università di Bologna 2019</p>
+    <p class="text-muted small mb-0">
+      Copyright &copy; Dipartimento di Matematica - Università di Bologna 2019.
+      <% if current_user && current_user.manager? %>   
+        <br/><%= link_to 'impersonate', who_impersonate_path %>  
+      <% end %>
+    </p>
   </div>
 </footer>
 
