@@ -8,6 +8,9 @@ $fa-font-path: '~@fortawesome/fontawesome-free/webfonts';
 // @import url('https://fonts.googleapis.com/css?family=Roboto:100,400,700&display=swap');
 @import url("https://fonts.googleapis.com/css?family=Raleway:400,400i,700&display=swap");
 
+$yellow-color: #ff9e2c;
+$green-color: #9cba7e;
+
 html {
   scroll-behavior: smooth;
 }
@@ -25,8 +28,16 @@ h1 {
   margin: auto;
   text-align: center;
 }
-h1.header-title {
-  font-weight: 400;
+.home-header {
+  @extend .container;
+  text-align: center;
+  margin: auto;
+  color: #cccc00;
+  h1, h3 {
+    font-family: serif;
+    font-weight: 400;
+    @extend .mt-2;
+  }
 }
 
 .btn-login {
@@ -130,16 +141,18 @@ h4.photo-title {
 }
 
 .modal-content {
-  background-color: $info;
-  color: white;
+  background-color: $light;
+  .modal-header {
+    @extend .bg-warning;
+  }
 }
 
 .matimmagini-bg-colored {
-  background-color: #ff9e2c; 
+  background-color: $yellow-color
 }
 
 .mattalks-bg-colored {
-  background-color: #9cba7e;
+  background-color: $green-color;
 }
 
 .contest-description-container {
@@ -158,4 +171,11 @@ h4.photo-title {
   }
 }
 
+.theme-show {
+  .theme-show-title {
+    font-size: 32px;
+  }
+  .theme-show-title {
+  }
+}
 
