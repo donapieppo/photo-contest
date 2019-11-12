@@ -40,8 +40,6 @@ $(document).ready(function(){
             </div>
             <div class="modal-body">
             </div>
-            <div class="modal-footer">
-            </div>
           </div><!-- .modal-content -->
         </div><!-- .modal-dialog -->
       </div><!-- .modal -->
