@@ -22,6 +22,7 @@ it:
         cf: Codice fiscale
         school: Docente di scuola
         id_card: Documento di identità
+        password: Scegli una password
         password_confirmation: Riscrivi la password
         privacy_policy: Trattamento dei dati personali
       theme:
