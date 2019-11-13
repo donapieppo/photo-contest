@@ -3,4 +3,5 @@ class Photo < ApplicationRecord
   belongs_to :user
   belongs_to :theme
 
+  validates :description, presence: true 
 end
