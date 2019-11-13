@@ -6,6 +6,7 @@ class PhotosController < ApplicationController
       @theme = Theme.find(params[:theme_id])
       @photos = @theme.photos
     else
+      # should not get here, not linked
       @photos = current_user.photos.with_attached_image.includes(:theme).order(:theme_id)
     end
     authorize @photos
@@ -37,6 +38,7 @@ class PhotosController < ApplicationController
   end
 
   def update
+    @theme = @photo.theme
     if @photo.update_attributes(photo_params)
       redirect_to root_path
     else
