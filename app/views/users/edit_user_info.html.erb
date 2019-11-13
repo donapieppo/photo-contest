@@ -1,7 +1,10 @@
 <div class="container">
   <div class="d-flex justify-content-center h-100">
     <div class="card mt-5">
-      <div class="card-header bg-warning"><h2><%= icon('fas fa-user', size: 36) %> I tuoi dati</h2></div>
+      <div class="card-header bg-warning">
+        <h2><%= icon('fas fa-user', size: 36) %> I tuoi dati</h2>
+        <p>I tuoi dati verranno conservati solo per la durata del Concorso.</p>
+      </div>
       <div class="card-body">
         <%= simple_form_for @user, url: :update_user_info, method: :post do |f| %>  
           <%= f.input :name %>  
