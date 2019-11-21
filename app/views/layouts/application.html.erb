@@ -16,9 +16,9 @@
   </head>
 
   <body>
+    <%= bootstrap_modal_div %>  
     <div>
       <%# <%= privacy_alert %1> %>
-      <%= bootstrap_modal_div %>  
       <% if current_user %>  
         <%= render(partial: 'layouts/menu') unless @no_menu %>
         <div class="container">
