@@ -1,6 +1,11 @@
 class UsersController < ApplicationController
   skip_before_action :user_complete_data
 
+  def index
+    authorize :user
+    @users = User.order(:surname, :name)
+  end
+
   def edit_user_info
     @user = current_user
     authorize @user
@@ -15,6 +20,20 @@ class UsersController < ApplicationController
     else
       render action: :edit_user_info
     end
+  end
+
+  def edit_release_document
+    if current_user.release_document.attached?
+      redirect_to root_path
+      return
+    end
+  end
+
+  def submit_release_document
+    current_user.update(release_document: params[:user][:release_document])
+  end
+
+  def delete_release_document
   end
 
   def delete_id_card
