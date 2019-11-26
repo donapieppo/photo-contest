@@ -2,9 +2,16 @@ class PhotosController < ApplicationController
   before_action :get_photo_and_check_permission, only: [:show, :edit, :update, :destroy]
 
   def index
-    if current_user.jury?
-      @theme = Theme.find(params[:theme_id])
-      @photos = @theme.photos
+    if current_user.jury_or_manager?
+      if params[:theme_id]
+        @theme = Theme.find(params[:theme_id])
+        @photos = @theme.photos
+      elsif params[:user_id]
+        @user = User.find(params[:user_id])
+        @photos = @user.photos
+      else
+        @photos = Photo.all
+      end
     else
       # should not get here, not linked
       @photos = current_user.photos.with_attached_image.includes(:theme).order(:theme_id)
@@ -27,7 +34,7 @@ class PhotosController < ApplicationController
     @photo.theme = @theme
     authorize @photo
     if @photo.save
-      redirect_to root_path
+      redirect_to root_path, notice: 'Grazie per aver inviato la tua foto. Avrai tempo fino alla chiusura del concorso per modificarla o cancellarla.'
     else
       render action: :new
     end
