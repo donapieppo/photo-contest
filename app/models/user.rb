@@ -12,6 +12,7 @@ class User < ApplicationRecord
   validates :cf, uniqueness: { case_sensitive: false, allow_blank: true }
   validate :adult
   has_one_attached :id_card
+  has_one_attached :release_document
 
   attr_accessor :id_card_missing_error
   attr_accessor :privacy_policy
@@ -32,6 +33,10 @@ class User < ApplicationRecord
 
   def jury?
     JURY.include?(email)
+  end
+
+  def jury_or_manager?
+    manager? || jury?
   end
 
   private 
