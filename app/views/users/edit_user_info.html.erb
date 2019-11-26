@@ -3,18 +3,18 @@
     <div class="card mt-5">
       <div class="card-header bg-warning">
         <h2><%= icon('fas fa-user', size: 36) %> I tuoi dati</h2>
-        <p>I tuoi dati verranno conservati solo per la durata del Concorso.</p>
+        <p>Questi dati verranno conservati solo per la durata del Concorso.</p>
       </div>
       <div class="card-body">
         <%= simple_form_for @user, url: :update_user_info, method: :post do |f| %>  
-          <%= f.input :name %>  
-          <%= f.input :surname %>  
-          <%= f.input :birthdate, as: :string, input_html: {type: :date, max: (Date.today - 19.years)} %>
-          <%= f.input :birthplace %>  
-          <%= f.input :address %>  
-          <%= f.input :cf %>  
+          <%= f.input :name, required: true %>  
+          <%= f.input :surname, required: true %>  
+          <%= f.input :birthdate, as: :string, input_html: {type: :date, max: (Date.today - 19.years)}, required: true %>
+          <%= f.input :birthplace, required: true %>  
+          <%= f.input :address, required: true %>  
+          <%= f.input :cf, required: true %>  
           <% unless @user.id_card.attached? %>
-            <%= f.input :id_card, as: :file %>  
+            <%= f.input :id_card, as: :file, required: true %>  
           <% end %>
           <%= f.input :school %>  
           <%= f.submit 'Salva' %> 
