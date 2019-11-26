@@ -11,6 +11,7 @@ $fa-font-path: '~@fortawesome/fontawesome-free/webfonts';
 $yellow-color: #ff9e2c;
 $green-color: #9cba7e;
 
+
 html {
   scroll-behavior: smooth;
 }
@@ -37,6 +38,8 @@ h1 {
     font-family: serif;
     font-weight: 400;
     @extend .mt-2;
+    text-shadow: -1px -1px black, -2px -2px 1px black;
+    // @extend .text-shadow;
   }
 }
 
