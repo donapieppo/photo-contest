@@ -1,4 +1,4 @@
-<% if current_user && ! current_user.jury? %>  
+<% if current_user && current_user.participant? %>  
   <%= render partial: 'release_document_warning' %>  
   <div class="container text-center mb-5">
     <h4 class="my-5">Concorso #matimmagini</h4>
