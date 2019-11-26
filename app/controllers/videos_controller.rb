@@ -26,7 +26,7 @@ class VideosController < ApplicationController
     @video.theme = @theme
     authorize @video
     if @video.save
-      redirect_to root_path
+      redirect_to root_path, notice: 'Grazie per aver inviato il tuo video. Avrai tempo fino alla chiusura del concorso per modificarla o cancellarla.'
     else
       render action: :new
     end

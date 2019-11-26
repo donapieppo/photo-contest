@@ -1,0 +1,11 @@
+  <% unless current_user %>  
+    <div class="col-12 p-5" style="background-color: #fff; border: 1px solid #000; color: #000">
+      <h4 class="my-3">Per partecipare</h4>
+      <% if Status.active? %>  
+        <%= link_to 'ACCEDI', new_user_session_path, class: "btn btn-primary btn-lg my-2 mx-2 p-3", style: "width: 250px" %>
+        <%= link_to 'REGISTRATI', new_user_registration_path, class: "btn btn-primary btn-lg my-2 mx-2 p-3", style: "width: 250px" %>
+      <% else %>
+        <p>La procedura di registrazione e invio di foto sarà aperta il giorno <br/><strong>1 Dicembre 2019</strong></p>
+      <% end %>
+    </div>
+  <% end %>

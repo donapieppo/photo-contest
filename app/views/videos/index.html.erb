@@ -1,5 +1,5 @@
 <div class="container text-center">
-  <% if current_user.jury? %>  
+  <% if current_user.jury_or_manager? %>  
     <%= render @videos %>
   <% else %>
     <% if @videos.any? %>  

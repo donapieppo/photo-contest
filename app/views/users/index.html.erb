@@ -1,0 +1,27 @@
+<div class="container">
+  <h1>Utenti</h1>
+
+  <table class="table table-sm table-striped">
+    <tr>
+      <th colspan="2"></th>
+      <td>documento</td>
+      <td>liberatoria</td>
+      <td>foto</td>
+      <td>video</td>
+    </tr>
+    <% @users.each do |u| %>  
+      <tr>
+        <th><%= u.surname %></th>
+        <td><%= mail_to u.email, u.email %></td>
+        <td>
+          <%= link_to("ci", u.id_card) if  u.id_card.attached? %>  
+        </td>
+        <td>
+          <%= link_to("liberatora", u.release_document) if  u.release_document.attached? %>  
+        </td>
+        <td><%= link_to "#{u.photos.count} foto", user_photos_path(u) %></td>
+        <td><%= link_to "#{u.videos.count} video", user_videos_path(u) %>
+      </tr>
+    <% end %>
+  </table>
+</div>

@@ -17,7 +17,12 @@
             <%= f.input :id_card, as: :file %>  
           <% end %>
           <%= f.input :school %>  
-          <%= f.submit 'Salva' %>  - mostra <%= link_to 'liberatoria', printable_release_path %>  
+          <%= f.submit 'Salva' %> 
+        <% end %>
+        <% if @user.release_document.attached? %>
+          <div class="m-2">
+            <%= link_to icon('fas fa-signature', 'Mostra la liberatoria'), @user.release_document %>  
+          </div>
         <% end %>
         <% if @user.id_card.attached? %>
           <div class="m-2">
