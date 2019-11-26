@@ -23,7 +23,7 @@ class User < ApplicationRecord
 
   def data_complete?
     self.jury? and return true
-    id_card.blank? and self.id_card_missing_error = 'Si prega di inserire la fotocopia del documento di identità'
+    id_card.blank? and self.id_card_missing_error = 'Occorre allegare la fotocopia di un documento di identità.'
     ! (name.blank? || surname.blank? || email.blank? || birthdate.blank? || birthplace.blank? || cf.blank? || id_card.blank?)
   end
 
@@ -37,6 +37,10 @@ class User < ApplicationRecord
 
   def jury_or_manager?
     manager? || jury?
+  end
+
+  def participant?
+    ! jury_or_manager?
   end
 
   private 
