@@ -1,0 +1,11 @@
+<% if current_user and (! current_user.release_document.attached?) %>
+  <div class="alert alert-danger">
+    <div class="container">
+      <h2><i class="fas fa-exclamation-triangle"></i> Manca la liberatoria</h2>
+      <p>Per partecipare al concorso è necessario inviare la liberatoria prima della chiusura attraverso il seguente   
+      <%= link_to('form', edit_release_document_path, class: 'btn btn-info') %>
+    </div>
+  </div>
+<% end %>
+
+

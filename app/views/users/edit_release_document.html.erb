@@ -1,0 +1,22 @@
+<div class="container">
+  <h1>Liberatoria</h1>
+
+  <p>Per partecipare è necessario scaricare il documento precompilato, firmarlo e inviarlo attraverso il form sottostante.</p>
+
+  <p>
+  <%= link_to 'Scarica la liberatoria da firmare', printable_release_path, class: 'btn btn-info' %>  
+  </p>
+
+  <div class="card">
+    <div class="card-header">
+      <h4>Invio liberatoria firmata<h4>
+    </div>
+    <div class="card-body">
+
+  <%= simple_form_for :user, url: :submit_release_document, method: :post do |f| %>  
+    <%= f.input :release_document, as: :file, label: 'Allega la liberatoria firmata' %>  
+    <input type="submit" name="commit" value="Invia il file" />
+  <% end %>
+    </div>
+  </div>
+</div>
