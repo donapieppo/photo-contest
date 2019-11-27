@@ -1,8 +1,20 @@
 <div class="row">
   <% Theme.for_photo.find_each do |theme| %>   
+
+    <% current_user_theme_photos = 0 %>  
+    <% if current_user and current_user.participant? %>  
+      <% current_user_theme_photos = current_user.photos.where(theme_id: theme.id).count %>  
+    <% end %>
+
     <div class="col-md-6">
-      <%= link_to new_theme_photo_path(theme), class: 'photo-theme-link' do %>  
-        <%= render theme %>  
+      <% if current_user_theme_photos >= 2 %>  
+        <div class='photo-theme-link photo-theme-link-disabled'>
+          <%= render theme, current_user_theme_photos: current_user_theme_photos %>
+        </div>
+      <% else %>
+        <%= link_to new_theme_photo_path(theme), class: 'photo-theme-link photo-theme-link-enabled', disabled: (current_user_theme_photos >= 2) do %>  
+          <%= render theme, current_user_theme_photos: current_user_theme_photos %>  
+        <% end %>
       <% end %>
     </div>
   <% end %>
