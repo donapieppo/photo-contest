@@ -1,12 +1,19 @@
 <div class="container">
+  <div class="alert alert-info my-3">
+    Per partecipare la concorso ti chiediamo di creare un account. <br/>
+    Nelle pagine successive ti verrà chiesto di fornire luogo e data di nascita, residenza, codice fiscale e copia di un documento di identità.<br/>
+    Avrai tempo poi di inviare la liberatoria fino alla scadenza del bando.
+  </div>
+
   <div class="d-flex justify-content-center h-100">
-    <div class="card mt-5">
+    <div class="card">
       <div class="card-header bg-warning">
         <h2><%= icon('fas fa-user', size: 36) %> Registrati al π Contest</h2>
-        </div>
+      </div>
       <div class="card-body">
         <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
           <%= f.error_notification %>
+
 
           <div class="form-inputs">
             <%= f.input :email,
@@ -32,8 +39,8 @@
             <%= recaptcha_tags %>
           </div>
 
-          <div class="form-actions my-2">
-            <%= f.button :submit, "Crea account", class: 'btn btn-primary' %> -
+          <div class="form-actions my-3">
+            <%= f.button :submit, "Crea un account", class: 'btn btn-primary' %> -
             <%= link_to 'indietro', root_path %>  
           </div>
         <% end %>
