@@ -7,7 +7,7 @@
     <% end %>
 
     <div class="col-md-6">
-      <% if current_user_theme_photos >= 2 %>  
+      <% if (current_user_theme_photos >= 2) || (! current_user_can_submit_in_theme?(theme)) %>  
         <div class='photo-theme-link photo-theme-link-disabled'>
           <%= render theme, current_user_theme_photos: current_user_theme_photos %>
         </div>
