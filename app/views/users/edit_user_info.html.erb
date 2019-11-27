@@ -3,7 +3,7 @@
     <div class="card mt-5">
       <div class="card-header bg-warning">
         <h2><%= icon('fas fa-user', size: 36) %> I tuoi dati</h2>
-        <p>Questi dati verranno conservati solo per la durata del Concorso.</p>
+        <p>I tuoi dati verranno conservati solo per la durata del Concorso.</p>
       </div>
       <div class="card-body">
         <%= simple_form_for @user, url: :update_user_info, method: :post do |f| %>  
@@ -17,6 +17,7 @@
             <%= f.input :id_card, as: :file, required: true %>  
           <% end %>
           <%= f.input :school %>  
+          <%= f.input :school_name %>  
           <%= f.submit 'Salva' %> 
         <% end %>
         <% if @user.release_document.attached? %>
@@ -34,3 +35,17 @@
     </div>
   </div>
 </div>
+
+<%= javascript_tag do %>  
+  $(function(){
+    $.fn.visibility_from = function (bool_check){
+      var visible_element = this;
+      visible_element.toggle($(bool_check).is(':checked'));
+      $(bool_check).change(function(){
+        visible_element.toggle($(bool_check).is(':checked'));
+      });
+      return visible_element;
+    }
+    $(".user_school_name").visibility_from("#user_school");
+  });
+<% end %>
