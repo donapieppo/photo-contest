@@ -21,6 +21,7 @@ it:
         address: Residenza
         cf: Codice fiscale
         school: Docente di scuola
+        school_name: Nome della scuola
         id_card: Documento di identità
         password: Scegli una password
         password_confirmation: Riscrivi la password
@@ -37,4 +38,4 @@ it:
       user:
         school: Selezionare nel caso si proponessero lavori per una classe.
         birthdate: Per partecipare è necessario essere maggiorenni.
-        id_card: Sono accettati carta di identità, passaporto, patente di guida 
+        id_card: Sono accettati carta di identità, passaporto, patente di guida.
