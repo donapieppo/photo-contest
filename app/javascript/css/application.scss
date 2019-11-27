@@ -104,15 +104,6 @@ h4.photo-title {
   font-weight: 100;
 }
 
-.photo-theme-link { 
-  @extend .m-2;
-  @extend .p-2;
-  @extend .btn;
-  @extend .btn-info;
-  text-align: center;
-  width: 100%;
-  height: 250px;
-}
 .sponsors-list {
   @extend .row;
   @extend .py-3;
@@ -176,9 +167,24 @@ h4.photo-title {
 
 .theme-show {
   .theme-show-title {
-    font-size: 32px;
+    font-size: 28px;
   }
-  .theme-show-title {
+  .theme-show-subtitle {
+    font-size: 22px;
   }
+}
+.photo-theme-link { 
+  @extend .m-2;
+  @extend .p-2;
+  @extend .btn;
+  text-align: center;
+  width: 100%;
+  height: 280px;
+}
+.photo-theme-link-enabled { 
+  @extend .btn-info;
+}
+.photo-theme-link-disabled { 
+  @extend .btn-secondary;
 }
 
