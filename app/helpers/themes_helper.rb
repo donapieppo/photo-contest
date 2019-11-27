@@ -17,4 +17,8 @@ module ThemesHelper
       ''
     end.html_safe
   end
+
+  def current_user_can_submit_in_theme?(theme)
+    (! current_user.school) || (current_user.school == theme.school)
+  end
 end
