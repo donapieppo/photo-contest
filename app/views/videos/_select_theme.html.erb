@@ -1,7 +1,7 @@
 <div class="row">
   <% Theme.for_video.find_each do |theme| %>   
     <div class="col-md-6">
-      <%= link_to new_theme_video_path(theme), class: 'photo-theme-link' do %>  
+      <%= link_to new_theme_video_path(theme), class: 'photo-theme-link photo-theme-link-enabled' do %>  
         <%= render theme %>  
       <% end %>
     </div>
