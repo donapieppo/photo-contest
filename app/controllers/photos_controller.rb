@@ -10,12 +10,13 @@ class PhotosController < ApplicationController
         @user = User.find(params[:user_id])
         @photos = @user.photos
       else
-        @photos = Photo.all
+        @photos = Photo.order(:theme_id)
       end
     else
       # should not get here, not linked
-      @photos = current_user.photos.with_attached_image.includes(:theme).order(:theme_id)
+      @photos = current_user.photos.order(:theme_id)
     end
+    @photos = @photos.includes(:theme, :user).with_attached_image
     authorize @photos
   end
 
