@@ -29,6 +29,9 @@
         <% if policy(photo).destroy?  %>  
           <span class="float-right mx-1"><%= link_to_delete photo_path(photo) %></span>
         <% end %>
+        <% if current_user && (photo.user_id != current_user.id) %>  
+          <span class="float-right mx-1"><%= photo.user.email %></span>
+        <% end %>
       </div>
     </div>
   </div>
