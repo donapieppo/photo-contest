@@ -20,6 +20,39 @@ body {
   font-family: 'Raleway', sans-serif;
 }
 
+.title-header {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 30rem;
+  position: relative;
+  display: table;
+  width: 100%;
+  height: auto;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  .subheader {
+    background-color: rgba(1, 1, 1, 0.4);
+    font-size: 2rem;
+    .header-dates {
+      font-size: 1.2rem;
+    }
+  }
+  @media (min-width: 992px) {
+    height: 100vh;
+    h1 {
+      font-size: 6.5rem;
+    }
+  }
+  h1 {
+    font-size: 3rem;
+    margin: 0;
+    padding: 0;
+  }
+}
 h1 {
   font-size: 36px;
   letter-spacing: -1px;
@@ -34,41 +67,16 @@ h1 {
   text-align: center;
   margin: auto;
   color: #cccc00;
-  h1, h3 {
+  h1 {
     font-family: serif;
     font-weight: 400;
     @extend .mt-2;
     text-shadow: -1px -1px black, -2px -2px 1px black;
-    // @extend .text-shadow;
   }
 }
 
 .btn-login {
 }
-.masthead {
-  min-height: 30rem;
-  position: relative;
-  display: table;
-  width: 100%;
-  height: auto;
-  padding-top: 8rem;
-  padding-bottom: 8rem;
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  h1 {
-    font-size: 4rem;
-    margin: 0;
-    padding: 0;
-  }
-  @media (min-width: 992px) {
-    height: 100vh;
-    h1 {
-      font-size: 6.5rem;
-    }
-  }
-}
-
 
 footer.footer {
   padding-top: 5rem;
@@ -108,19 +116,19 @@ h4.photo-title {
   @extend .row;
   @extend .py-3;
   @extend .my-5;
-  .sponsor-title {
-    @extend .col-sm-4;
+  .sponsors-title {
     @extend .col-md-3;
+    font-weight: bold;
+    margin-bottom: 20px;
   }
   .sponsors-logo {
-    @extend .col-sm-8;
     @extend .col-md-9;
     div {
       display: inline;
-      margin-left: 50px;
+      padding: 20px;
     }
     img {
-      width: 150px;
+      width: 140px;
     }
   }
 }
