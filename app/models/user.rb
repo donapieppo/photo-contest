@@ -17,8 +17,12 @@ class User < ApplicationRecord
   attr_accessor :id_card_missing_error
   attr_accessor :privacy_policy
 
-  def to_s
+  def cn
     name + ' ' + surname
+  end
+
+  def to_s
+    cn
   end
 
   def data_complete?
