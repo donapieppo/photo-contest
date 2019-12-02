@@ -28,8 +28,9 @@ body {
   display: table;
   width: 100%;
   height: 100vh;
-  padding-top: 3rem;
-  padding-bottom: 3rem;
+  min-height: 900px;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
