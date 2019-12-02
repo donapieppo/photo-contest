@@ -4,6 +4,10 @@ class UserPolicy < ApplicationPolicy
     @user.manager? 
   end
 
+  def show?
+    @user.jury_or_manager?
+  end
+
   def edit_user_info?
     @user.id == @record.id
   end
