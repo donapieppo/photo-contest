@@ -11,7 +11,7 @@
     </tr>
     <% @users.each do |u| %>  
       <tr>
-        <th><%= u.surname %></th>
+        <th><%= link_to u.cn, u %></th>
         <td><%= mail_to u.email, u.email %></td>
         <td>
           <%= link_to(icon('fas fa-file'), u.id_card) if u.id_card.attached? %>  
