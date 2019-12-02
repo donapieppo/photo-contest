@@ -1,28 +1,25 @@
 <!-- Header -->
-<header class="masthead d-flex" style="background: url('<%= asset_pack_path 'media/images/home.jpg' %>');
-                                       background-position: center;
-                                       background-repeat: no-repeat;
-                                       background-size: cover;"> 
-<div class="home-header">
-  <h1>π Contest</h1>
-  <h3>
-    <em>Dipartimento di Matematica <br/>
-    <small>Alma Mater Studiorum Università di Bologna</small></em>
-  </h3>
-  <a class="btn btn-primary btn-xl my-5" href="#about">Mostra i contest</a>
-  <h4>Dal 1&deg; dicembre 2019 al 16 febbraio 2020</h4>
-  <% unless current_user %>  
-    <div class="col-12 p-5" >
-      <h4 class="my-3">Per partecipare</h4>
-      <% if Status.active? %>  
-        <%= link_to 'ACCEDI', new_user_session_path, class: "btn btn-warning btn-lg my-2 mx-2 p-3", style: "width: 250px" %>
-        <%= link_to 'REGISTRATI', new_user_registration_path, class: "btn btn-warning btn-lg my-2 mx-2 p-3", style: "width: 250px" %>
-      <% else %>
-        <p>La procedura di registrazione e invio di foto sarà aperta il giorno <br/><strong>1 Dicembre 2019</strong></p>
-      <% end %>
+<header class="title-header d-flex" style="background-image: url('<%= asset_pack_path 'media/images/home.jpg' %>')">
+  <div class="home-header">
+    <h1>π Contest</h1>
+    <div class="my-3 subheader">
+      <div>DIPARTIMENTO DI MATEMATICA</div>
+      <div><small>Alma Mater Studiorum Università di Bologna</small></div>
+      <div class="header-dates">dal 2 dicembre 2019 al 16 febbraio 2020</div>
     </div>
-  <% end %>
-</div>
+    <a class="btn btn-primary btn-xl my-3" href="#about">Mostra i contest</a>
+    <% unless current_user %>  
+      <div class="col-12" >
+        <h4 class="my-3">Per partecipare</h4>
+        <% if Status.active? %>  
+          <%= link_to 'ACCEDI', new_user_session_path, class: "btn btn-warning btn-lg my-2 mx-2 p-3", style: "width: 250px" %>
+          <%= link_to 'REGISTRATI', new_user_registration_path, class: "btn btn-warning btn-lg my-2 mx-2 p-3", style: "width: 250px" %>
+        <% else %>
+          <p>La procedura di registrazione e invio di foto sarà aperta il giorno <br/><strong>2 Dicembre 2019</strong></p>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
 </header>
 
 
