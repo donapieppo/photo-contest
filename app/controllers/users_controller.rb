@@ -6,6 +6,11 @@ class UsersController < ApplicationController
     @users = User.order(:surname, :name)
   end
 
+  def show
+    @user = User.find(params[:id])
+    authorize @user
+  end
+
   def edit_user_info
     @user = current_user
     authorize @user
