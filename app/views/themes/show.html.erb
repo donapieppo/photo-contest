@@ -5,8 +5,8 @@
   <%= @theme.description %>  
 </div>
 
-<div>
-  <% if @theme.school %>  
-    Possono partecipare le scuole
-  <% end %>
-</div>
+<% if @theme.school %>  
+  <div class="text-right mt-3">
+    <em>Possono partecipare le scuole.</em>
+  </div>
+<% end %>
