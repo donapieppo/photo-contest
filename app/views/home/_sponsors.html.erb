@@ -2,18 +2,17 @@
   <div class="sponsors-list">
     <div class="sponsors-title">Organizzato da:</div>
     <div class="sponsors-logo">
-      <%= link_to image_pack_tag('sponsor/dm.png'), 'http://www.matematica.unibo.it/it', target: :new %>
+      <% SPONSOR_ORGANIZERS.each do |n, v| %>  
+        <%= link_to image_pack_tag("sponsor/#{v[:img]}"), v[:url], target: :new %>
+      <% end %>
     </div>
   </div>
   <div class="sponsors-list">
     <div class="sponsors-title">Con il contributo di:</div>
     <div class="sponsors-logo">
-      <div><%= link_to image_pack_tag('sponsor/indam.png'), 'https://www.altamatematica.it', target: :new %></div>
-      <div><%= link_to image_pack_tag('sponsor/pls.png'), 'http://www.pls.unibo.it/it', target: :new %></div>
-      <div><%= link_to image_pack_tag('sponsor/ghaia.png'), 'https://site.unibo.it/ghaia-eu-project/en', target: :new %></div>
-      <div><%= link_to image_pack_tag('sponsor/asterisco.png'), 'https://www.asterisco.srl', target: :new %></div>
-      <div><%= link_to image_pack_tag('sponsor/ossigeno.png'), 'http://cooperativaossigeno.it', target: :new %></div>
-      <div><%= link_to image_pack_tag('sponsor/zamboni.png'), 'https://www.zamboni53store.com', target: :new %></div>
+      <% SPONSOR_SUPPORTERS.each do |n, v| %>  
+        <div><%= link_to image_pack_tag("sponsor/#{v[:img]}"), v[:url], target: :new %></div>
+      <% end %>
     </div>
   </div>
 </div>
