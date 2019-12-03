@@ -2,12 +2,21 @@ class VideosController < ApplicationController
   before_action :get_video_and_check_permission, only: [:show, :edit, :update, :destroy]
 
   def index
-    if current_user.jury?
-      @theme = Theme.find(params[:theme_id])
-      @videos = @theme.videos
+    if current_user.jury_or_manager?
+      if params[:theme_id]
+        @theme = Theme.find(params[:theme_id])
+        @videos = @theme.videos.order(:user_id)
+      elsif params[:user_id]
+        @user = User.find(params[:user_id])
+        @videos = @user.videos.order(:theme_id)
+      else
+        @videos = Video.order(:theme_id)
+      end
     else
-      @videos = current_user.videos.includes(:theme).order(:theme_id)
+      # should not get here, not linked
+      @videos = current_user.videos.order(:theme_id)
     end
+    @videos = @videos.includes(:theme, :user)
     authorize @videos
   end
 
