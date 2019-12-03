@@ -19,6 +19,10 @@
       <% if current_user && current_user.manager? %>   
         <br/><%= link_to 'impersonate', who_impersonate_path %>  
       <% end %>
+      <% if (current_user != true_user) %>
+        <br/>You <%= true_user.email %> are impersonating <strong><%= current_user.email %></strong><br/> 
+        <%= link_to "back to admin", stop_impersonating_path %>
+      <% end %>
     </p>
   </div>
 </footer>
