@@ -26,7 +26,7 @@ class ReleaseLetter < Prawn::Document
     move_down(25)
     text "Il/La sottoscritto/a #{user.name} #{user.surname} nata/o a #{user.birthplace} il #{I18n.l user.birthdate}"
     text "residente in Via/P.zza #{user.address}"
-    text "C.F. #{user.cf.upcase}(di seguito denominato “Autore”)"
+    text "C.F. #{user.cf.upcase} (di seguito denominato “Autore”)"
 
     move_down(25)
 
@@ -34,7 +34,7 @@ class ReleaseLetter < Prawn::Document
 
     move_down(25)
 
-    text "di essere l’unico autore nonché l’esclusivo titolare dei diritti di utilizzazione economica delle fotografie (di seguito opere) allegate e, comunque, di poterne liberamente disporre nella misura necessaria ad eseguire il presente Atto."
+    text "\u2022 di essere l’unico autore nonché l’esclusivo titolare dei diritti di utilizzazione economica delle fotografie (di seguito opere) allegate e, comunque, di poterne liberamente disporre nella misura necessaria ad eseguire il presente Atto."
 
     text "\u2022 qualora l’Opera sia stata precedentemente pubblicata, di non aver trasferito o, comunque, di aver riacquisito i diritti oggetto del presente Atto e, pertanto, di poterne liberamente disporre nella misura necessaria a dare esecuzione allo stesso;"
     text "\u2022 che l’Opera ha carattere di originalità, che la sua utilizzazione non è suscettibile di violare, né in tutto né in parte, diritti di terzi, e che il suo contenuto non è contrario a norme di legge;"
