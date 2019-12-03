@@ -5,10 +5,10 @@ class PhotosController < ApplicationController
     if current_user.jury_or_manager?
       if params[:theme_id]
         @theme = Theme.find(params[:theme_id])
-        @photos = @theme.photos
+        @photos = @theme.photos.order(:user_id)
       elsif params[:user_id]
         @user = User.find(params[:user_id])
-        @photos = @user.photos
+        @photos = @user.photos.order(:theme_id)
       else
         @photos = Photo.order(:theme_id)
       end
