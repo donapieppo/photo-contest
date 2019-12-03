@@ -37,6 +37,7 @@ class PhotosController < ApplicationController
     if @photo.save
       redirect_to root_path, notice: 'Grazie per aver inviato la tua foto. Avrai tempo fino alla chiusura del concorso per modificarla o cancellarla.'
     else
+      @photo.image = nil
       render action: :new
     end
   end
