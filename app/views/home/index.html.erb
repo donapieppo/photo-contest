@@ -1,9 +1,9 @@
 <% if current_user && current_user.participant? %>  
   <%= render partial: 'release_document_warning' %>  
   <div class="container text-center mb-5">
-    <h4 class="my-5">Concorso #matimmagini</h4>
+    <h4 class="mt-5">Concorso #matimmagini</h4>
     <% if @photos.any? %>  
-      <h5 class="my-5">Gentile <%= current_user %>, hai sottoposto le seguenti foto:</h5>
+      <p class="my-5">Gentile <%= current_user %>, hai tempo fino alla chiusura del concorso per modificare o cancellare le seguenti foto:</p>
       <%= render @photos, preview: true %>  
     <% else %>
       <div class="alert alert-warning">
