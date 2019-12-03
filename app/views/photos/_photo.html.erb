@@ -6,7 +6,9 @@
       <div class="alert alert-warning">
       <h3>Non hai ancora inviato questa foto</h3>
       <%= icon('fas fa-exclamation-circle', size: 72) %>  
-      <div class="my-3"><%= link_to 'aggiungi la foto', [:edit, photo] %></div>  
+      <% if policy(photo).edit? %>
+        <div class="my-3"><%= link_to 'aggiungi la foto', [:edit, photo] %></div>  
+      <% end %>
       </div>
     <% end %>
   </div>
@@ -30,7 +32,7 @@
           <span class="float-right mx-1"><%= link_to_delete photo_path(photo) %></span>
         <% end %>
         <% if current_user && (photo.user_id != current_user.id) %>  
-          <span class="float-right mx-1"><%= photo.user.email %></span>
+          <span class="float-right mx-1"><small><%= photo.user.email %></small></span>
         <% end %>
       </div>
     </div>
