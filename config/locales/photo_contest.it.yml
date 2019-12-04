@@ -36,7 +36,7 @@ it:
   simple_form:
     hints:
       user:
-        school: Selezionare nel caso si proponessero lavori per una classe.
+        school: Selezionare in caso si propongano lavori per una classe o un gruppo di alunni.
         birthdate: Per partecipare è necessario essere maggiorenni.
         id_card: Sono accettati carta di identità, passaporto, patente di guida.
         address: Indirizzo completo
