@@ -24,7 +24,6 @@
           <p>#matimmagini &egrave; aperto a tutti!</p>
           <p>I singoli partecipanti (maggiorenni) possono inviare fino a due foto per categoria.</p>
           <p>Possono partecipare anche classi di scuola secondaria (rappresentate da un insegnante) nelle categorie 2, 3 e 4.</p>
-
           <%= link_to "scarica il bando", '/bando_matimmagini.pdf', class:"mt-2 btn btn-info" %>
         </div>
         </div>
@@ -33,19 +32,10 @@
           <span style="font-size: 400%"><i class="fas fa-video"></i></span>
           <h3>il videocontest</h3>
           <dl>
-            <dt>#tre</dt>
-            <dd>
-            per una tesi di laurea triennale in matematica<br/>
-            conseguita a Bologna o<br/>
-            conseguita da uno studente della magistrale di Bologna<br/>
-            non prima dell'anno solare 2017
-            </dd>
-            <dt>#trepi&ugrave;due</dt>
-            <dd>
-            per una tesi di laurea magistrale in matematica<br/>
-            conseguita a Bologna<br/> non prima dell'anno solare 2017
-            </dd>
-
+            <dt><%= modal_link_to '#tre', theme_path(5) %></dt>
+            <dd>spiega in un breve video la tua tesi di laurea triennale in Matematica</dd>
+            <dt><%= modal_link_to '#trepiùdue', theme_path(6) %></dt>
+            <dd>spiega in un breve video la tua tesi di laurea magistrale in Matematica</dd>
             <%= link_to "scarica il bando", '/bando_mattalks.pdf', class:"mt-2 btn btn-info" %>
           </dl>
           </div>
