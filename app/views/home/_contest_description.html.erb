@@ -8,16 +8,9 @@
         <h3>il photocontest</h3>
         <div>
           <h4>le categorie</h4>
-          <dl>
-            <dt>1. <%= modal_link_to '#insideoutdm', theme_path(1) %></dt>
-            <dd>dentro e fuori l'edificio</dd>
-            <dt>2. <%= modal_link_to '#mathisallaround', theme_path(2) %></dt>
-            <dd>la matematica c'&egrave; e si vede</dd>
-            <dt>3. <%= modal_link_to '#everybodylovespi', theme_path(3) %></dt>
-            <dd>&pi; aka Pi greco</dd>
-            <dt>4. <%= modal_link_to '#cgiandmath', theme_path(4) %></dt>
-            <dd>matematica &amp; grafica digitale</dd>
-          </dl>
+          <% cache 'photo_themes_list_cache' do %>
+            <%= photo_themes_list %>  
+          <% end %>
         </div>
         <div>
           <h4>il regolamento</h4>
@@ -26,25 +19,24 @@
           <p>Possono partecipare anche classi di scuola secondaria (rappresentate da un insegnante) nelle categorie 2, 3 e 4.</p>
           <%= link_to "scarica il bando", '/bando_matimmagini.pdf', class:"mt-2 btn btn-info" %>
         </div>
-        </div>
-        <div class="contest-description-item mattalks-bg-colored">
-          <h2>MATtalks</h2>
-          <span style="font-size: 400%"><i class="fas fa-video"></i></span>
-          <h3>il videocontest</h3>
-          <dl>
-            <dt><%= modal_link_to '#tre', theme_path(5) %></dt>
-            <dd>spiega in un breve video la tua tesi di laurea triennale in Matematica</dd>
-            <dt><%= modal_link_to '#trepiùdue', theme_path(6) %></dt>
-            <dd>spiega in un breve video la tua tesi di laurea magistrale in Matematica</dd>
-            <%= link_to "scarica il bando", '/bando_mattalks.pdf', class:"mt-2 btn btn-info" %>
-          </dl>
-          </div>
-          <div class="raccontiamate">
-            <h2>RACCONTIAMATE</h2>
-            <h3>Pi-day al Dipartimento di Matematica</h3>
-            <h4>14 marzo 2020</h4>
-          </div>
+      </div>
+      <div class="contest-description-item mattalks-bg-colored">
+        <h2>MATtalks</h2>
+        <span style="font-size: 400%"><i class="fas fa-video"></i></span>
+        <h3>il videocontest</h3>
+        <div>
+          <h4>le categorie</h4>
+          <% cache 'video_themes_list_cache' do %>
+            <%= video_themes_list %>  
+          <% end %>
         </div>
       </div>
+      <div class="raccontiamate">
+        <h2>RACCONTIAMATE</h2>
+        <h3>Pi-day al Dipartimento di Matematica</h3>
+        <h4>14 marzo 2020</h4>
+      </div>
+    </div>
+  </div>
 </section>
 
