@@ -1,5 +1,5 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: 'dipmat-supportoweb@unibo.it', 
-          reply_to: 'dipmat-supportoweb@unibo.it'
+  default from: CONTACT_EMAIL
+          reply_to: CONTACT_EMAIL
   layout 'mailer'
 end

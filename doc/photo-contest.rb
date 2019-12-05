@@ -1,3 +1,5 @@
+CONTACT_EMAIL='dipmat-supportoweb@unibo.it'
+
 ADMINS = ['donapieppo@example.com', 'xxx@example.it']
 JURY   = ['fiorella.s@example.com', 'nicola.a@example.it']
 
