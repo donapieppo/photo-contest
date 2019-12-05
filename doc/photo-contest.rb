@@ -1,4 +1,5 @@
-CONTACT_EMAIL='dipmat-supportoweb@unibo.it'
+PRIVACY_MANAGER = "Prof. Giiii Doooo"
+CONTACT_EMAIL='dipmat-supportoweb@example.it'
 
 ADMINS = ['donapieppo@example.com', 'xxx@example.it']
 JURY   = ['fiorella.s@example.com', 'nicola.a@example.it']
