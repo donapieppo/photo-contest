@@ -20,5 +20,13 @@
         <% end %>
       </div>
     <% end %>
+    <% if defined?(current_user_theme_videos) && current_user_theme_videos > 0 %>
+      <div class="ml-3 badge badge-warning">
+        <%= current_user_theme_videos %> video
+        <% if current_user_theme_videos >= 1 %>
+          (limite massimo raggiunto)
+        <% end %>
+      </div>
+    <% end %>
   </div>
 </div>
