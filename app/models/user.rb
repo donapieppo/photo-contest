@@ -18,7 +18,7 @@ class User < ApplicationRecord
   attr_accessor :privacy_policy
 
   def cn
-    name + ' ' + surname
+    "#{name} #{surname}"
   end
 
   def to_s
