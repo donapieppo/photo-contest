@@ -3,7 +3,7 @@
     <div class="sponsors-title">Organizzato da:</div>
     <div class="sponsors-logo">
       <% SPONSOR_ORGANIZERS.each do |n, v| %>  
-        <%= link_to image_pack_tag("sponsor/#{v[:img]}"), v[:url], target: :new %>
+        <%= link_to image_pack_tag("sponsor/#{v[:img]}", alt: n), v[:url], target: :new %>
       <% end %>
     </div>
   </div>
@@ -11,7 +11,7 @@
     <div class="sponsors-title">Con il contributo di:</div>
     <div class="sponsors-logo">
       <% SPONSOR_SUPPORTERS.each do |n, v| %>  
-        <div><%= link_to image_pack_tag("sponsor/#{v[:img]}"), v[:url], target: :new %></div>
+        <div><%= link_to image_pack_tag("sponsor/#{v[:img]}", alt: n), v[:url], target: :new %></div>
       <% end %>
     </div>
   </div>
