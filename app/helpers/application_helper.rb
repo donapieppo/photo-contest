@@ -11,4 +11,7 @@ module ApplicationHelper
     link_to icon('fas fa-edit') + " " + name, url, title: "Inserisci/modifica dati", class: (button ? 'button ' : '') + (modal ? 'modal-link ' : '')
   end
 
+  def mail_to_contact
+    mail_to CONTACT_EMAIL, CONTACT_EMAIL
+  end
 end
