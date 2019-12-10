@@ -19,39 +19,6 @@ body {
   // font-family: 'Roboto', sans-serif;
   font-family: 'Raleway', sans-serif;
 }
-
-.title-header {
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: relative;
-  display: table;
-  width: 100%;
-  height: 100vh;
-  min-height: 900px;
-  padding-top: 2rem;
-  padding-bottom: 2rem;
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  .subheader {
-    background-color: rgba(1, 1, 1, 0.4);
-    font-size: 2rem;
-    .header-dates {
-      font-size: 1.2rem;
-    }
-  }
-  h1 {
-    font-size: 3rem;
-    margin: 0;
-    padding: 0;
-  }
-  @media (min-width: 992px) {
-    h1 {
-      font-size: 80px;
-    }
-  }
-}
 h1 {
   font-size: 36px;
   letter-spacing: -1px;
@@ -61,16 +28,42 @@ h1 {
   margin: auto;
   text-align: center;
 }
-.home-header {
+
+.title-header {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  display: table;
+  width: 100%;
+  height: 100vh;
+  min-height: 900px;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+.title-header-content {
   @extend .container;
   text-align: center;
-  margin: auto;
+  @media (min-width: 992px) {
+    margin: auto;
+  }
   color: #cccc00;
   h1 {
+    @extend .mt-1;
+    font-size: 3rem;
     font-family: serif;
     font-weight: 400;
-    @extend .mt-2;
     text-shadow: -1px -1px black, -2px -2px 1px black;
+  }
+  @media (min-width: 992px) {
+    h1 { font-size: 80px; }
+  }
+  .subheader {
+    background-color: rgba(1, 1, 1, 0.4);
+    font-size: 1.6rem;
+    .header-dates {
+      font-size: 1.2rem;
+    }
   }
 }
 
