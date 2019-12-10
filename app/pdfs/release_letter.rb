@@ -80,7 +80,7 @@ class ReleaseLetter < Prawn::Document
     text " I dati personali potranno essere oggetto di comunicazione a dipendenti, collaboratori e fornitori dell’Alma Mater Studiorum - Università di Bologna, nonché ad ogni soggetto al quale la normativa vigente prevede debbano essere comunicati per il corretto adempimento degli obblighi connessi con l’esecuzione del presente Atto e, in ogni caso, nei limiti in cui ciò sia strettamente necessario per il conseguimento delle finalità sopra indicate."
     text " L’Autore potrà, in qualsiasi momento, esercitare i diritti di cui all’art. 7 del d.lgs. n. 196/2003, richiedendo, tra l’altro, la comunicazione in forma intellegibile dei dati, la cancellazione, l’aggiornamento, la rettificazione, l’opposizione al trattamento, mediante comunicazione scritta da inviarsi all’indirizzo del Titolare del trattamento."
     text " Il Titolare del trattamento dei dati è l’Alma Mater Studiorum - Università di Bologna, Via Zamboni, 33 – 40126 Bologna."
-    text " Responsabile del trattamento è il Direttore Generale Marco Degli Esposti. L’elenco completo ed aggiornato dei Responsabili del trattamento può essere richiesta per iscritto al Titolare del trattamento."
+    text " Responsabile del trattamento è il Direttore del Dipartimento di Matematica Prof. Giovanni Dore. L’elenco completo ed aggiornato dei Responsabili del trattamento può essere richiesta per iscritto al Titolare del trattamento."
   end
 end
 
