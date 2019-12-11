@@ -5,7 +5,7 @@
   <%= mail_to @user.email, icon('fas fa-envelope') %> 
   <%= link_to(icon('fas fa-file'), @user.id_card, title: 'documento di identità') if @user.id_card.attached? %>  
   <%= link_to(icon('fas fa-signature'), @user.release_document, title: 'liberatoria') if @user.release_document.attached? %><br/>
-  nato il <%= @user.birthdate %> a <%= @user.birthplace %>.<br/>
+  nato/a il <%= @user.birthdate %> a <%= @user.birthplace %>.<br/>
   residente in <%= @user.address %>.<br/>
 
   <% if @user.school %>  
