@@ -19,7 +19,7 @@
           <% if policy(video).destroy?  %>  
             <span class="float-right mx-1"><%= link_to_delete video_path(video) %></span>
           <% end %>
-          <% if current_user && (video.user_id != current_user.id) %>  
+          <% if current_user && (video.user_id != current_user.id) && policy(:user).show? %>  
             <span class="float-right mx-1"><small><%= video.user.email %></small></span>
           <% end %>
         </div>
