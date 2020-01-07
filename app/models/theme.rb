@@ -10,7 +10,7 @@ class Theme < ApplicationRecord
   end
 
   def for_photo?
-    ! for_videos?
+    ! for_video?
   end
 
   def for_video?
