@@ -2,11 +2,14 @@ class Video < ApplicationRecord
   belongs_to :user
   belongs_to :theme
 
+  YOUTUBE_REGEX = %r{https://www\.youtube\.com/watch\?v=(?<video_code>[0-9a-zA-Z]+)}
+  VIMEO_REGEX   = %r{https://vimeo\.com/(?<video_code>[0-9a-zA-Z]+)}
+
   def embed_url
-    if video_url =~ %r{https://www\.youtube\.com/watch\?v=([0-9a-zA-Z]+)}
-      return "https://www.youtube.com/embed/#{$1}"
-    elsif video_url =~ %r{https://vimeo.com/([0-9a-zA-Z]+)}
-      return "https://player.vimeo.com/video/#{$1}"
+    if m = video_url.match(YOUTUBE_REGEX)
+      return "https://www.youtube.com/embed/#{m[:video_code]}"
+    elsif m = video_url.match(VIMEO_REGEX)
+      return "https://player.vimeo.com/video/#{m[:video_code]}"
     end
   end
 end
