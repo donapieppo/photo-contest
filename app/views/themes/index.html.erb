@@ -7,15 +7,21 @@
         <div class="h-100">
           <%= render theme %>  
         </div>
-        <%= link_to "Inviate #{theme.photos.count} foto", theme_photos_path(theme) %>
+        <% if theme.for_photo? %>  
+          <%= link_to "Inviate #{theme.photos.count} foto", theme_photos_path(theme) %>
+        <% else %>
+          <%= link_to "Inviati #{theme.videos.count} video", theme_videos_path(theme) %>
+        <% end %>
         <% if policy(theme).edit? %>  
           <%= link_to_edit [:edit, theme] %>  
         <% end %>
       </div>
     <% end %>
 
-    <div class="my-3">
-      <%= link_to 'Nuova categoria', new_theme_path, class: 'btn btn-primary' %>  
-    </div>
+    <% if policy(:theme).new?  %>  
+      <div class="my-3">
+        <%= link_to 'Nuova categoria', new_theme_path, class: 'btn btn-primary' %>  
+      </div>
+    <% end %>
   </div>
 </div>
