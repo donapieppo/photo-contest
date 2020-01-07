@@ -185,5 +185,6 @@ h4.photo-title {
 }
 .photo-theme-link-disabled { 
   @extend .btn-secondary;
+  @extend .active;
 }
 
