@@ -11,6 +11,9 @@
     </div>
     <div class="text-italic">
       <small><%= theme.description %></small>
+      <% if current_user && current_user.school && (! theme.school) %>  
+        <br/><i class="fas fa-ban"></i> (non per scuole)
+      <% end %>
     </div>
     <% if defined?(current_user_theme_photos) && current_user_theme_photos > 0 %>  
       <div class="ml-3 badge badge-warning">
