@@ -13,6 +13,8 @@ it:
         description: Descrizione
         image: Immagine
         theme: Categoria
+      video:
+        video_url: Indirizzo dove si trova il video
       user:
         name: Nome
         surname: Cognome
@@ -35,6 +37,8 @@ it:
 
   simple_form:
     hints:
+      video:
+        video_url: I video devono essere salvati su youtube o vimeo.
       user:
         school: Selezionare in caso si propongano lavori per una classe o un gruppo di alunni.
         birthdate: Per partecipare è necessario essere maggiorenni.
