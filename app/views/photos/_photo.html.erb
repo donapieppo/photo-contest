@@ -26,7 +26,10 @@
       <div class="card-footer text-left">
         <div>
           <small class="text-muted">
-            foto inviata il <%= l(photo.created_at, format: :day) %>
+            foto inviata il <%= l(photo.created_at, format: :day) %> 
+            <% if policy(:user).show? %>  
+              da <%= photo.user %>  
+            <% end %>
           </small>
           <% if policy(photo).edit? %>  
             <span class="float-right mx-1"><%= link_to icon('fas fa-edit'), [:edit, photo] %></span>
