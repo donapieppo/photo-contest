@@ -5,10 +5,10 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable,
          :trackable
 
-  has_many :photos, dependent: :delete
-  has_many :videos, dependent: :delete
-  has_one_attached :id_card, dependent: :delete
-  has_one_attached :release_document, dependent: :delete
+  has_many :photos, dependent: :destroy
+  has_many :videos, dependent: :destroy
+  has_one_attached :id_card, dependent: :destroy
+  has_one_attached :release_document, dependent: :destroy
 
   validates :email, uniqueness: { case_sensitive: false }
   validates :cf, uniqueness: { case_sensitive: false, allow_blank: true }

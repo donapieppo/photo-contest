@@ -44,7 +44,7 @@ class UsersController < ApplicationController
   def delete_id_card
     @user = current_user
     authorize @user
-    @user.id_card.delete
+    @user.id_card.destroy
     redirect_to edit_user_info_path
   end
 
@@ -52,6 +52,12 @@ class UsersController < ApplicationController
     pdf = ReleaseLetter.new(current_user)
     filename = "liberatoria_#{current_user.surname}.pdf"
     send_data pdf.render, filename: filename, type: "application/pdf"
+  end
+
+  def destroy
+    @user = User.find(params[:id])
+    @user.destroy
+    redirect_to users_path
   end
   
   private
