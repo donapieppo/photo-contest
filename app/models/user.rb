@@ -18,7 +18,11 @@ class User < ApplicationRecord
   attr_accessor :privacy_policy
 
   def cn
-    "#{name} #{surname}"
+    if surname.blank?
+      "#{name} -----"
+    else
+      "#{name} #{surname}"
+    end
   end
 
   def to_s
