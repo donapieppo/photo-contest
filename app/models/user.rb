@@ -5,14 +5,14 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable,
          :trackable
 
-  has_many :photos
-  has_many :videos
+  has_many :photos, dependent: :delete
+  has_many :videos, dependent: :delete
+  has_one_attached :id_card, dependent: :delete
+  has_one_attached :release_document, dependent: :delete
 
   validates :email, uniqueness: { case_sensitive: false }
   validates :cf, uniqueness: { case_sensitive: false, allow_blank: true }
   validate :adult
-  has_one_attached :id_card
-  has_one_attached :release_document
 
   attr_accessor :id_card_missing_error
   attr_accessor :privacy_policy
