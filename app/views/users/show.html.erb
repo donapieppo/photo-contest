@@ -1,5 +1,10 @@
 <div class="container">
-  <h1><%= @user %></h1>
+  <h1>
+    <%= @user %>
+    <% if policy(:user).destroy? %>  
+      <%= link_to_delete @user_path %>  
+    <% end %>
+  </h1>
 
   <%= @user.cn %> (c.f. <%= @user.cf %>) 
   <%= mail_to @user.email, icon('fas fa-envelope') %> 
