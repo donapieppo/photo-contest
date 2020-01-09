@@ -1,22 +1,18 @@
 <% if current_user && current_user.participant? %>  
   <%= render partial: 'release_document_warning' %>  
   <div class="container text-center mb-5">
-    <h4 class="mt-5">Concorso #matimmagini</h4>
+    <h4 class="mt-3">Concorso #matimmagini</h4>
     <% if @photos.any? %>  
-      <p class="my-5">Gentile <%= current_user %>, hai tempo fino alla chiusura del concorso per modificare o cancellare le seguenti foto:</p>
+      <%= edit_and_delete_info %>  
       <%= render @photos, preview: true %>  
     <% else %>
       <div class="alert alert-warning">
         Non hai ancora inviato nessuna foto.
       </div>
     <% end %>
-    <% if policy(:photo).new?  %>  
-      <div class="text-center m-5">
-        <%= link_to icon('fas fa-plus-circle', t(:new_photo), size: 42), new_photo_path, class: 'new-button' %>  
-      </div>
-    <% end %>
+    <%= link_to_new_photo %>  
     <hr/>
-    <h4 class="my-5">Concorso MATtalks</h4>
+    <h4 class="my-3">Concorso MATtalks</h4>
     <% if @videos.any? %>
       <%= render @videos %>
     <% else %>
@@ -24,11 +20,7 @@
         Non hai ancora inviato nessun video.
       </div>
     <% end %>
-    <% if policy(:video).new?  %>  
-      <div class="text-center m-5">
-        <%= link_to icon('fas fa-plus-circle', t(:new_video), size: 42), new_video_path, class: 'new-button' %>  
-      </div>
-    <% end %>
+    <%= link_to_new_video %>  
   </div>
 <% end %>
 

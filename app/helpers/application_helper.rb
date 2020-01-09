@@ -14,4 +14,26 @@ module ApplicationHelper
   def mail_to_contact
     mail_to CONTACT_EMAIL, CONTACT_EMAIL
   end
+
+  def edit_and_delete_info
+    content_tag :p, class: "alert alert-info my-3" do 
+      "Gentile #{current_user}, hai tempo fino alla chiusura del concorso per modificare o cancellare le seguenti foto:"
+    end
+  end
+
+  def link_to_new_photo
+    if policy(:photo).new? 
+      content_tag :div, class: "text-center my-5" do
+        link_to icon('fas fa-plus-circle', t(:new_photo), size: 42), new_photo_path, class: 'new-button'  
+      end
+    end
+  end
+
+  def link_to_new_video
+    if policy(:video).new? 
+      content_tag :div, class: "text-center my-5" do
+        link_to icon('fas fa-plus-circle', t(:new_video), size: 42), new_video_path, class: 'new-button'  
+      end
+    end
+  end
 end
