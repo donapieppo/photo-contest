@@ -108,18 +108,20 @@ h4.photo-title {
   @extend .py-3;
   @extend .my-5;
   .sponsors-title {
-    @extend .col-md-3;
+    @extend .col-lg-3;
     font-weight: bold;
     margin-bottom: 20px;
   }
   .sponsors-logo {
-    @extend .col-md-9;
-    div {
-      display: inline;
-      padding: 20px;
-    }
-    img {
-      width: 140px;
+    @extend .col-lg-9;
+    @extend .row;
+    .sponsor-logo {
+      @extend .col-6;
+      @extend .col-lg-3;
+      padding: 10px;
+      img {
+        @extend .img-fluid;
+      }
     }
   }
 }
