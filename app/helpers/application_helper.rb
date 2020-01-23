@@ -36,4 +36,13 @@ module ApplicationHelper
       end
     end
   end
+
+  def release_description
+    content_tag :p do 
+      'Nel caso siano state fotografate/riprese persone, è necessario far compilare ai soggetti la '.html_safe + 
+        link_to('liberatoria per utilizzo del ritratto/riprese audio-video', '/liberatoria_ritratto_video.pdf') + 
+        ' e inviarla a '.html_safe + 
+        mail_to('dipmat-supportoweb@unibo.it', 'dipmat-supportoweb@unibo.it.')
+    end
+  end
 end

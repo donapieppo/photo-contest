@@ -3,6 +3,7 @@
     <h2><%= theme_icon(@theme) %> <%= @theme %></h2>
     <h6><%= @theme.subtitle %></h6>
     <p><%= @theme.description %></p>
+    <p><%= release_description %></p>
   </div>
   <div class="card-body">
     <%= simple_form_for [@theme, @photo] do |f| %>  
