@@ -58,9 +58,9 @@ h1 {
   }
   .subheader {
     padding: 6px;
-    background-color: rgba(1, 1, 1, 0.4);
+    background-color: rgba(1, 1, 1, 0.5);
     font-size: 1.4rem;
-    .header-dates {
+    .header-description {
       font-size: 1rem;
     }
   }
@@ -157,6 +157,12 @@ h4.photo-title {
     border: 1px solid #000; 
     padding: 50px; 
     color: #000;
+  }
+  #awards {
+    @extend .col-12;
+    @extend .p-5;
+    background-color: #f0f0b3; 
+    border: 1px solid #000;
   }
   .raccontiamate {
     @extend .col-12;
