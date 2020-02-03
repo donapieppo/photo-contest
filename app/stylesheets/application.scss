@@ -196,3 +196,15 @@ h4.photo-title {
   @extend .active;
 }
 
+.program {
+  @extend .row;
+  text-align: left;
+  .hour {
+    @extend .col-md-3;
+    text-align: right;
+    font-weight: bold;
+  }
+  .event {
+    @extend .col-md-9;
+  }
+}
