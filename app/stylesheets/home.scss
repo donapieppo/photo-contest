@@ -1,0 +1,110 @@
+.title-header {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  display: table;
+  width: 100%;
+  height: 100vh;
+  min-height: 660px;
+}
+.title-header-content {
+  @extend .container;
+  text-align: center;
+  margin-top: 1rem;
+  @media (min-width: 992px) {
+    margin: auto;
+  }
+  color: #cccc00;
+  h1 {
+    @extend .mt-1;
+    font-size: 3rem;
+    font-family: serif;
+    font-weight: 400;
+    text-shadow: -1px -1px black, -2px -2px 1px #000;
+  }
+  @media (min-width: 992px) {
+    h1 { font-size: 80px; }
+  }
+  .subheader {
+    padding: 6px;
+    background-color: rgba(204, 204, 204, 0.75);
+    color: #000;
+    font-size: 1.4rem;
+    .header-description {
+      font-size: 1rem;
+    }
+  }
+}
+
+.sponsors-list {
+  @extend .row;
+  @extend .py-3;
+  @extend .my-5;
+  .sponsors-title {
+    @extend .col-lg-3;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  .sponsors-logo {
+    @extend .col-lg-9;
+    @extend .row;
+    .sponsor-logo {
+      @extend .col-6;
+      @extend .col-lg-3;
+      padding: 10px;
+      img {
+        @extend .img-fluid;
+      }
+    }
+  }
+}
+.matimmagini-bg-colored {
+  background-color: $yellow-color
+}
+
+.mattalks-bg-colored {
+  background-color: $green-color;
+}
+
+.contest-description-container {
+  @extend .row;
+  .contest-description-item {
+    @extend .col-md-6;
+    border: 1px solid #000; 
+    padding: 50px; 
+    color: #000;
+  }
+  #awards {
+    @extend .col-12;
+    @extend .p-5;
+    background-color: #ffffff; 
+    border: 1px solid #000;
+  }
+  .raccontiamate {
+    @extend .col-12;
+    @extend .p-5;
+    background-color: #f0f0b3; 
+    border: 1px solid #000;
+  }
+}
+
+.program {
+  @extend .row;
+  text-align: left;
+  .hour {
+    @extend .col-md-3;
+    text-align: right;
+    font-weight: bold;
+  }
+  .event {
+    @extend .col-md-9;
+  }
+}
+
+@media (max-width: 992px) {
+  .go-buttons {
+    display: none;
+  }
+}
+
