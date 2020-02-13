@@ -1,7 +1,11 @@
 <div class="row my-3">
   <div class="col-md-6 m-0 px-1">
     <% if photo.image.attached? %>
-      <%= image_tag photo.image.variant(resize_to_limit: [800, 800]), class: "img-fluid m-0" %>  
+      <% if photo.image.variable? %>
+        <%= image_tag photo.image.variant(resize_to_limit: [800, 800]), class: "img-fluid m-0" %>  
+      <% else %>
+        <p class="alert alert-danger">Errore nell'immagine</p>
+      <% end %>
     <% else %>
       <div class="alert alert-warning">
         <h3>Non hai ancora inviato questa foto</h3>
