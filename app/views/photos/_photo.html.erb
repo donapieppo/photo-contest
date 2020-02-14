@@ -41,6 +41,7 @@
           <% if current_user && (photo.user_id != current_user.id) && policy(:user).show? %>  
             <span class="float-right mx-1">
               <small><%= photo.user.email %> <%= '(scuola)' if photo.user.school %>  </small>
+              <span class="badge badge-info"><%= photo.id %></span>
             </span>
           <% end %>
         </div>
