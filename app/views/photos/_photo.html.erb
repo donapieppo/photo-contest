@@ -19,7 +19,7 @@
   <div class="col-md-6 m-0 px-1">
     <div class="card h-100">
       <div class="card-header bg-info text-white text-center" style="width: 100; border: 1px solid #ccc; position: absolute; right: -10px; top: -10px; width: 50%; box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);">
-        <div>Nella categoria <%= 'scuola' if photo.user.school %>  </div>
+        <div>Nella categoria <%= 'scuola' if photo.user.school %></div>
         <h4 class="photo-title"> <%= photo.theme %> </h4>
       </div>
       <div class="class-body h-100 p-1" style="margin-top: 6rem">
@@ -38,10 +38,15 @@
           <% if policy(photo).destroy?  %>  
             <span class="float-right mx-1"><%= link_to_delete photo_path(photo) %></span>
           <% end %>
+          <%# FIXME %>  
           <% if current_user && (photo.user_id != current_user.id) && policy(:user).show? %>  
-            <span class="float-right mx-1">
-              <small><%= photo.user.email %> <%= '(scuola)' if photo.user.school %>  </small>
-              <span class="badge badge-info"><%= photo.id %></span>
+            <div class="float-right mx-1">
+              <small><%= photo.user.email %></small>
+              <span class="badge badge-warning"><%= photo.id %></span>
+            </div>
+            <% if photo.user.school %>  
+              <div class="small">(SCUOLA: <%= photo.user.school_to_s.upcase %>)</div>
+            <% end %>
             </span>
           <% end %>
         </div>
