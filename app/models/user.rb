@@ -51,6 +51,12 @@ class User < ApplicationRecord
     ! jury_or_manager?
   end
 
+  def school_to_s
+    if school
+      school_name.blank? ? ' - ' : school_name
+    end
+  end
+
   private 
 
   def adult
