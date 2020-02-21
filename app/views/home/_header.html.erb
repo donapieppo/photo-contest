@@ -19,10 +19,11 @@
     </div>
     <% unless current_user %>  
       <div class="col-12" >
-        <h4 class="my-3">Per partecipare</h4>
+        <%# <h4 class="my-3">Per partecipare</h4> %>
         <% if Status.active? %>  
           <%= link_to 'ACCEDI', new_user_session_path, class: "btn btn-warning btn-lg my-2 mx-2 p-3", style: "width: 250px" %>
-          <%= link_to 'REGISTRATI', new_user_registration_path, class: "btn btn-warning btn-lg my-2 mx-2 p-3", style: "width: 250px" %>
+          <%# <%= link_to 'REGISTRATI', new_user_registration_path, class: "btn btn-warning btn-lg my-2 mx-2 p-3 disabled", style: "width: 250px" %1> %>
+          <%= link_to 'LE ISCRIZIONI SONO CHIUSE', '#', class: "btn btn-warning btn-lg my-2 mx-2 p-3 disabled", style: "width: 250px" %>
         <% else %>
           <p>La procedura di registrazione e invio di foto sarà aperta il giorno <br/><strong>2 Dicembre 2019</strong></p>
         <% end %>

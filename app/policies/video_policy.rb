@@ -4,15 +4,18 @@ class VideoPolicy < ApplicationPolicy
   end
 
   def create?
-    @user && (! user.jury?)
+    #@user && (! user.jury?)
+    false
   end
 
   def update?
-    @user.id == @record.user_id
+    #@user.id == @record.user_id
+    false
   end
 
   def destroy?
-    @user.id == @record.user_id
+    #@user.id == @record.user_id
+    false
   end
 end
 

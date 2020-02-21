@@ -1,6 +1,14 @@
 class RegistrationsController < Devise::RegistrationsController
   prepend_before_action :check_captcha, :check_privacy_policy, only: [:create] 
 
+  def new
+    redirect_to root_path
+  end
+
+  def create
+    redirect_to root_path
+  end
+
   private
 
   def check_captcha
