@@ -1,7 +1,7 @@
 class UserPolicy < ApplicationPolicy
 
   def index?
-    @user.manager? 
+    @user.jury_or_manager?
   end
 
   def show?
