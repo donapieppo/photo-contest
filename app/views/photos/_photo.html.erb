@@ -41,7 +41,7 @@
           <%# FIXME %>  
           <% if current_user && (photo.user_id != current_user.id) && policy(:user).show? %>  
             <div class="float-right mx-1">
-              <small><%= photo.user.email %></small>
+              <small><%= link_to photo.user.email, photo.user %></small>
               <span class="badge badge-warning"><%= photo.id %></span>
             </div>
             <% if photo.user.school %>  
