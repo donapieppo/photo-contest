@@ -27,7 +27,7 @@
         </div>
       <% end %>
       <%= yield %>
-      <%= render partial: 'layouts/footer' %>  
+      <%= render partial: 'layouts/footer' unless @no_footer %>  
     </div>
   </body>
 </html>
