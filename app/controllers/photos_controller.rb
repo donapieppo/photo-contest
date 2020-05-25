@@ -23,6 +23,17 @@ class PhotosController < ApplicationController
   def show
   end
 
+  def slideshow
+    @no_menu = @no_footer = true
+    @theme = params[:theme_id] ? Theme.find(params[:theme_id]) : Theme.where(video: false).first
+    @photos = @theme.photos.includes(:user)
+    if @school = params[:school]
+      @photos = @photos.where('users.school = 1').references(:user)
+    else
+      @photos = @photos.where('users.school is null or users.school != 1').references(:user)
+    end
+  end
+
   def new
     @theme = Theme.find(params[:theme_id]) if params[:theme_id]
     @photo = current_user.photos.new
