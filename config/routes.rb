@@ -6,7 +6,10 @@ Rails.application.routes.draw do
     resources :photos
     resources :videos
   end
-  resources :photos
+  resources :photos do 
+    get :slideshow, to: 'photos#slideshow', as: :slideshow, on: :collection
+  end
+
   resources :videos
   resources :users do
     resources :photos
