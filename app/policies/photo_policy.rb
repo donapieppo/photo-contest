@@ -3,6 +3,10 @@ class PhotoPolicy < ApplicationPolicy
     @user 
   end
 
+  def slideshow?
+    @user
+  end
+
   def create?
     # @user && (! user.jury?)
     false
