@@ -21,7 +21,7 @@
                 <% active = '' %>  
                 <%= image_tag photo.image, class: "carousel-image" %>  
                 <div class="carousel-caption d-none d-md-block">
-                  <h5><%= photo.user %> (<%= photo.user.school_name unless photo.user.school_name.blank? %>)</h5>
+                  <h5><%= photo.user.to_s.upcase %> <%= "(" + photo.user.school_name + ")" unless photo.user.school_name.blank? %></h5>
                   <p><%= photo.description %></p>
                 </div>
               </div>
