@@ -6,7 +6,7 @@ gem 'mysql2', '>= 0.4.4'
 gem 'webpacker', '~> 4.0'
 gem 'jbuilder', '~> 2.7'
 # Use Active Storage variant
-gem 'image_processing', '~> 1.2'
+gem 'image_processing', '~> 1.12'
 gem 'bootsnap', '>= 1.4.2', require: false
 
 gem 'mini_magick'
